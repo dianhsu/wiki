@@ -6,12 +6,43 @@ nav:
     - About: about.md
   - 重装机兵2重制版:
     - 首页: mm2r/首页.md
+    - 支线任务: mm2r/支线任务.md
     - 古洛文地图: mm2r/古洛文.md
     - 引擎排行: mm2r/引擎排行.md
-    - 战车: mm2r/战车.md
-    - 支线任务: mm2r/支线任务.md
-    - 数据↩️: https://1drv.ms/x/s!AqCIauwLpiXzg4Zpebw0jH04QpacZw?e=itLMCZ
+    - 战车列表: mm2r/战车.md
+    - 打捞物: mm2r/打捞物.md
+    - 地点列表: mm2r/地点列表.md
+    - Boss列表: mm2r/Boss.md
+    - 大破坏密码: mm2r/大破坏密码.md
+    - 数据:
+      - 战车装备:
+        - 主炮: mm2r/数据/主炮.md
+        - 副炮: mm2r/数据/副炮.md
+        - S-E: mm2r/数据/S-E.md
+        - 引擎: mm2r/数据/引擎.md
+        - C装置: mm2r/数据/C装置.md
+
+      - 数据Excel版↩️: https://1drv.ms/x/s!AqCIauwLpiXzg4Zpebw0jH04QpacZw?e=itLMCZ
 theme: 
   name: material
   features:
     - navigation.tabs
+markdown_extensions:
+  - markdown.extensions.toc:
+      slugify: !!python/object/apply:pymdownx.slugs.slugify {kwds: {case: lower}}
+      permalink: true
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.details
+  - tables
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+  - javascripts/tablesort.js
