@@ -1,0 +1,17 @@
+site_name: dian的资料站
+site_url: https://example.com/
+nav:
+  - 首页:
+    - Home: index.md
+    - About: about.md
+  - 重装机兵2重制版:
+    - 首页: mm2r/首页.md
+    - 古洛文地图: mm2r/古洛文.md
+    - 引擎排行: mm2r/引擎排行.md
+    - 战车: mm2r/战车.md
+    - 支线任务: mm2r/支线任务.md
+    - 数据↩️: https://1drv.ms/x/s!AqCIauwLpiXzg4Zpebw0jH04QpacZw?e=itLMCZ
+theme: 
+  name: material
+  features:
+    - navigation.tabs
