@@ -13,6 +13,8 @@ nav:
     - 打捞物: mm2r/打捞物.md
     - 地点列表: mm2r/地点列表.md
     - Boss列表: mm2r/Boss.md
+    - 击破奖励: mm2r/击破奖励.md
+    - 周目店: mm2r/周目店.md
     - 大破坏密码: mm2r/大破坏密码.md
     - 数据:
       - 战车装备:
@@ -27,6 +29,7 @@ theme:
   name: material
   features:
     - navigation.tabs
+  language: 'zh'
 markdown_extensions:
   - markdown.extensions.toc:
       slugify: !!python/object/apply:pymdownx.slugs.slugify {kwds: {case: lower}}
@@ -46,3 +49,8 @@ extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
   - javascripts/tablesort.js
+
+
+extra:
+  search:
+    language: 'jp'
