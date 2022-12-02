@@ -16,15 +16,13 @@ nav:
     - 击破奖励: mm2r/击破奖励.md
     - 周目店: mm2r/周目店.md
     - 大破坏密码: mm2r/大破坏密码.md
-    - 数据:
-      - 战车装备:
-        - 主炮: mm2r/数据/主炮.md
-        - 副炮: mm2r/数据/副炮.md
-        - S-E: mm2r/数据/S-E.md
-        - 引擎: mm2r/数据/引擎.md
-        - C装置: mm2r/数据/C装置.md
-
-      - 数据Excel版↩️: https://1drv.ms/x/s!AqCIauwLpiXzg4Zpebw0jH04QpacZw?e=itLMCZ
+    - 战车装备:
+      - 主炮: mm2r/数据/主炮.md
+      - 副炮: mm2r/数据/副炮.md
+      - S-E: mm2r/数据/S-E.md
+      - 引擎: mm2r/数据/引擎.md
+      - C装置: mm2r/数据/C装置.md
+    - 数据Excel版↩️: https://1drv.ms/x/s!AqCIauwLpiXzg4Zpebw0jH04QpacZw?e=itLMCZ
 theme: 
   name: material
   features:
@@ -53,4 +51,6 @@ extra_javascript:
 
 extra:
   search:
-    language: 'jp'
+    language: 
+      - 'jp'
+      - 'en'
