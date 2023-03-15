@@ -1,0 +1,1476 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://dianhsu.github.io/wiki/data_structure/">
+      
+      
+        <link rel="prev" href="../geometry/">
+      
+      
+        <link rel="next" href="../miscellaneous/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.3">
+    
+    
+      
+        <title>数据结构 - dianhsu's wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.c4a75a56.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#数据结构" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="dianhsu&#39;s wiki" class="md-header__button md-logo" aria-label="dianhsu's wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            dianhsu's wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              数据结构
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href=".." class="md-tabs__link">
+      首页
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../math/" class="md-tabs__link">
+        数学
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../string/" class="md-tabs__link">
+      字符串
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../game/" class="md-tabs__link">
+      游戏
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../graph/" class="md-tabs__link">
+      图论
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../geometry/" class="md-tabs__link">
+      计算几何
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  <li class="md-tabs__item">
+    <a href="./" class="md-tabs__link md-tabs__link--active">
+      数据结构
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../miscellaneous/" class="md-tabs__link">
+      杂项
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="dianhsu&#39;s wiki" class="md-nav__button md-logo" aria-label="dianhsu's wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    dianhsu's wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        首页
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          数学
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          数学
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../math/" class="md-nav__link">
+        首页
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../string/" class="md-nav__link">
+        字符串
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../game/" class="md-nav__link">
+        游戏
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../graph/" class="md-nav__link">
+        图论
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../geometry/" class="md-nav__link">
+        计算几何
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          数据结构
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        数据结构
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#数据结构" class="md-nav__link">
+    数据结构
+  </a>
+  
+    <nav class="md-nav" aria-label="数据结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#线段树" class="md-nav__link">
+    线段树
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#st表稀疏表c17" class="md-nav__link">
+    ST表（稀疏表）(C++17)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#树状数组" class="md-nav__link">
+    树状数组
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#珂朵莉树" class="md-nav__link">
+    珂朵莉树
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#splay树" class="md-nav__link">
+    Splay树
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avl树" class="md-nav__link">
+    AVL树
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../miscellaneous/" class="md-nav__link">
+        杂项
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#数据结构" class="md-nav__link">
+    数据结构
+  </a>
+  
+    <nav class="md-nav" aria-label="数据结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#线段树" class="md-nav__link">
+    线段树
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#st表稀疏表c17" class="md-nav__link">
+    ST表（稀疏表）(C++17)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#树状数组" class="md-nav__link">
+    树状数组
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#珂朵莉树" class="md-nav__link">
+    珂朵莉树
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#splay树" class="md-nav__link">
+    Splay树
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avl树" class="md-nav__link">
+    AVL树
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>数据结构</h1>
+
+<h2 id="数据结构">数据结构<a class="headerlink" href="#数据结构" title="Permanent link">&para;</a></h2>
+<h3 id="线段树">线段树<a class="headerlink" href="#线段树" title="Permanent link">&para;</a></h3>
+<pre><code class="language-cpp">// Luogu P3373
+template&lt;typename T = int&gt;
+inline T read() {
+    T ret;
+    cin &gt;&gt; ret;
+    return ret;
+}
+
+template&lt;class Fun&gt;
+class Y_combinator {
+private:
+    Fun fun_;
+public:
+    template&lt;class F&gt;
+    Y_combinator(F&amp;&amp; fun) : fun_(static_cast&lt;F&amp;&amp;&gt;(fun)) {}
+    template&lt;class... Args&gt;
+    decltype(auto) operator () (Args&amp;&amp;...args) const {
+        return fun_(*this, static_cast&lt;Args&amp;&amp;&gt;(args)...);
+    }
+};
+template&lt;class T&gt; Y_combinator(T)-&gt;Y_combinator&lt;T&gt;;
+
+#define MID ((l + r) &gt;&gt; 1)
+#define LEFT (cur &lt;&lt; 1)
+#define RIGHT ((cur &lt;&lt; 1) | 1)
+
+int main(int argc, char* argv[]) {
+    fastIO();
+    int n, m;
+    cin &gt;&gt; n &gt;&gt; m;
+    vector&lt;ll&gt; arr{0};
+    for (int i = 0; i &lt; n; ++i) {
+        arr.push_back(read&lt;ll&gt;());
+    }
+    vector&lt;ll&gt; lazy((n &lt;&lt; 2) + 10);
+    vector&lt;ll&gt; node((n &lt;&lt; 2) + 10);
+    Y_combinator(
+        [&amp;](auto&amp;&amp; build, int cur, int l, int r) -&gt; void {
+            if (l == r) {
+                node[cur] = arr[l];
+            } else {
+                build(LEFT, l, MID);
+                build(RIGHT, MID + 1, r);
+                node[cur] = node[LEFT] + node[RIGHT];
+            }
+        }
+    )(1, 1, n);
+    auto&amp;&amp; lazyUpdate = [&amp;](int cur, int l, int r) -&gt; void {
+        if (lazy[cur] != 0) {
+            node[LEFT] += lazy[cur] * (MID - l + 1);
+            node[RIGHT] += lazy[cur] * (r - MID);
+            lazy[LEFT] += lazy[cur];
+            lazy[RIGHT] += lazy[cur];
+            lazy[cur] = 0;
+        }
+    };
+    auto&amp;&amp; update = Y_combinator(
+        [&amp;](auto&amp;&amp; update, int cur, int l, int r, int s, int e, ll v) {
+            if (s &gt; r or e &lt; l) return;
+            if (s &lt;= l and r &lt;= e) {
+                node[cur] += (r - l + 1) * v;
+                lazy[cur] += v;
+            } else {
+                lazyUpdate(cur, l, r);
+                update(LEFT, l, MID, s, e, v);
+                update(RIGHT, MID + 1, r, s, e, v);
+                node[cur] = node[LEFT] + node[RIGHT];
+            }
+        }
+    );
+    auto&amp;&amp; query = Y_combinator(
+        [&amp;](auto&amp;&amp; query, int cur, int l, int r, int s, int e)-&gt;ll {
+            if (s &gt; r or e &lt; l) return 0;
+            if (s &lt;= l and e &gt;= r) {
+                return node[cur];
+            }
+            lazyUpdate(cur, l, r);
+            ll ret = query(LEFT, l, MID, s, e);
+            ret += query(RIGHT, MID + 1, r, s, e);
+            return ret;
+        }
+    );
+    while (m--) {
+        int q, x, y, k;
+        cin &gt;&gt; q &gt;&gt; x &gt;&gt; y;
+        if (q == 1) {
+            cin &gt;&gt; k;
+            update(1, 1, n, x, y, k);
+        } else {
+            cout &lt;&lt; query(1, 1, n, x, y) &lt;&lt; endl;
+        }
+    }
+    return 0;
+}
+</code></pre>
+<h3 id="st表稀疏表c17">ST表（稀疏表）(C++17)<a class="headerlink" href="#st表稀疏表c17" title="Permanent link">&para;</a></h3>
+<pre><code class="language-cpp">template&lt;typename iter, typename BinOp&gt;
+class SparseTable {
+    using T = typename remove_reference&lt;decltype(*declval&lt;iter&gt;())&gt;::type;
+    vector&lt;vector&lt;T&gt;&gt; arr;
+    BinOp binOp;
+public:
+    SparseTable(iter begin, iter end, BinOp binOp) : arr(1), binOp(binOp) {
+        int n = distance(begin, end);
+        arr.assign(32 - __builtin_clz(n), vector&lt;T&gt;(n));
+        arr[0].assign(begin, end);
+        for (int i = 1; i &lt; arr.size(); ++i) {
+            for (int j = 0; j &lt; n - (1 &lt;&lt; i) + 1; ++j) {
+                arr[i][j] = binOp(arr[i - 1][j], arr[i - 1][j + (1 &lt;&lt; (i - 1))]);
+            }
+        }
+    }
+    T query(int lPos, int rPos) {
+        int h = floor(log2(rPos - lPos + 1));
+        return binOp(arr[h][lPos], arr[h][rPos - (1 &lt;&lt; h) + 1]);
+    }
+};
+</code></pre>
+<h3 id="树状数组">树状数组<a class="headerlink" href="#树状数组" title="Permanent link">&para;</a></h3>
+<pre><code class="language-cpp">template&lt;typename T&gt;
+struct FenWick {
+    int N;
+    vector&lt;T&gt; arr;
+    FenWick(int sz): N(sz), arr(sz + 1, 0) {}
+    void update(int pos, T val) {
+        for (; pos &lt;= N;pos |= (pos + 1)) {
+            arr[pos] += val;
+        }
+    }
+    // 获取 [1, pos] 的和
+    T get(int pos) {
+        T ret = 0;
+        for (; pos &gt; 0; --pos) {
+            ret += arr[pos];
+            pos &amp;= (pos + 1);
+        }
+        return ret;
+    }
+    // 获取 [l, r] 的和
+    T query(int l, int r) {
+        return get(r) - get(l - 1);
+    }
+};
+</code></pre>
+<h3 id="珂朵莉树">珂朵莉树<a class="headerlink" href="#珂朵莉树" title="Permanent link">&para;</a></h3>
+<pre><code class="language-cpp">namespace Chtholly{
+struct Node{
+    int l, r;
+    mutable int v;
+    Node(int il, int ir, int iv): l(il), r(ir), v(iv){}
+    bool operator &lt; (const Node&amp; arg) const{
+        return l &lt; arg.l;
+    }
+};
+class Tree{
+protected:
+    auto split(int pos){
+        if(pos &gt; _sz) return odt.end();
+        auto it = --odt.upper_bound(Node{pos, 0, 0});
+        if(it-&gt;l == pos) return it;
+        auto tmp = *it;
+        odt.erase(it);
+        odt.insert({tmp.l, pos - 1, tmp.v});
+        return odt.insert({pos, tmp.r, tmp.v}).first;
+    }  
+public:
+    Tree(int sz, int ini = 1): _sz(sz), odt({Node{1, sz, ini}}) {}
+    virtual void assign(int l, int r, int v){
+        auto itr = split(r + 1), itl = split(l);
+        // operations here
+        odt.erase(itl, itr);
+        odt.insert({l, r, v});
+    }
+protected:
+    int _sz;
+    set&lt;Node&gt; odt;
+};
+}
+
+</code></pre>
+<h3 id="splay树">Splay树<a class="headerlink" href="#splay树" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>https://loj.ac/p/104
+有误，暂未修</p>
+</blockquote>
+<pre><code class="language-cpp">#include &lt;vector&gt;
+#include &lt;array&gt;
+#include &lt;iostream&gt;
+#include &lt;cassert&gt;
+using namespace std;
+template&lt;typename T&gt;
+class SplayTree{
+public:
+    struct Node{
+        Node *parent{};
+        std::array&lt;Node*, 2&gt; child{};
+        T val;
+        // cnt: repeat of current element, sz: element count of child tree, sum: repeats of child tree
+        size_t cnt, sz, sum;
+        explicit Node(T value_arg): val(value_arg), cnt(1), sz(1), sum(1){}
+        bool side() const{
+            return parent-&gt;child[1] == this;
+        }
+        // maintain information of current element
+        void maintain(){
+            if(!this) return;
+            this-&gt;sum = this-&gt;cnt;
+            this-&gt;sz = 1;
+            if(this-&gt;child[0]) {
+                this-&gt;sum += this-&gt;child[0]-&gt;sum;
+                this-&gt;sz += this-&gt;child[0]-&gt;sz;
+            }
+            if(this-&gt;child[1]) {
+                this-&gt;sum += this-&gt;child[1]-&gt;sum;
+                this-&gt;sz += this-&gt;child[1]-&gt;sz;
+            }
+        }
+        // left rotate and right rotate
+        void rotate(){
+            const auto p = parent;
+            const bool i = side();
+            if(p-&gt;parent){
+                p-&gt;parent-&gt;attach(p-&gt;side(), this);
+            }else{
+                parent = nullptr;
+            }
+            p-&gt;attach(i, child[!i]);
+            attach(!i, p);
+            p-&gt;maintain();
+            maintain();
+        }
+        void splay(){
+            for(;parent;rotate()){
+                if(parent-&gt;parent){
+                    (side() == parent-&gt;side() ? parent: this)-&gt;rotate();
+                }
+            }
+        }
+        // attach node new_ as the node's side child
+        void attach(bool side, Node* const new_){
+            if(new_) new_-&gt;parent = this;
+            child[side] = new_;
+        }
+    };
+    struct iterator{
+        using iterator_category = std::bidirectional_iterator_tag;
+        using value_type = T;
+        using pointer = T*;
+        using reference = T&amp;;
+        using difference_type = long long;
+    public:
+        Node* node;
+        void operator--(){ advance&lt;false&gt;();}
+        void operator++(){ advance&lt;true&gt;();}
+        const T&amp; operator*(){return node-&gt;val;}
+        explicit iterator(Node* node_arg): node(node_arg){}
+        bool operator==(const iterator oth) const{
+            return node == oth.node;
+        }
+        bool operator != (const iterator oth) const{
+            return *this != oth;
+        }
+    private:
+        template&lt;bool dir&gt; void advance(){
+            if(node-&gt;child[dir]){
+                node = extremum&lt;!dir&gt;(node-&gt;child[dir]);
+                return;
+            }
+            for(;node-&gt;parent and node-&gt;side() == dir; node = node-&gt;parent);
+            node = node-&gt;parent;
+        }
+    };
+
+    template&lt;bool i&gt; static Node* extremum(Node* x){
+        assert(x);
+        for(;x-&gt;child[i]; x = x-&gt;child[i]);
+        return x;
+    }
+    Node* rt{};
+    explicit SplayTree()= default;
+    ~SplayTree(){ destroy(rt);}
+    void insert(const T&amp; arg){
+        if(!rt){
+            rt = new Node(arg);
+            rt-&gt;maintain();
+            return;
+        }
+        Node* cur = rt, *f = nullptr;
+        while(true){
+            if(cur-&gt;val == arg){
+                cur-&gt;cnt++;
+                cur-&gt;maintain();
+                f-&gt;maintain();
+                cur-&gt;splay();
+                rt = cur;
+                break;
+            }
+            f = cur;
+            cur = cur-&gt;child[cur-&gt;val &lt; arg];
+            if(!cur){
+                Node* tmp = new Node(arg);
+                f-&gt;child[f-&gt;val &lt; arg] = tmp;
+                tmp-&gt;parent = f;
+                tmp-&gt;maintain();
+                f-&gt;maintain();
+                tmp-&gt;splay();
+                rt = tmp;
+                break;
+            }
+        }
+    }
+
+    // size, sum
+    std::pair&lt;size_t, size_t&gt; rank(const T&amp; arg){
+        std::pair&lt;size_t, size_t&gt; res{0, 0};
+        Node* cur = rt;
+        while(cur){
+            if(arg &lt; cur-&gt;val){
+                cur = cur-&gt;child[0];
+            }else{
+                if(cur-&gt;child[0]) {
+                    res.first += cur-&gt;child[0]-&gt;sz;
+                    res.second += cur-&gt;child[0]-&gt;sum;
+                }
+                res.first ++;
+                res.second += cur-&gt;cnt;
+                if(arg == cur-&gt;val){
+                    cur-&gt;splay();
+                    rt = cur;
+                    break;
+                }
+                cur = cur-&gt;child[1];
+            }
+        }
+        return res;
+    }
+    template&lt;bool unique = false&gt;
+    iterator kth(size_t k){
+        assert(k &lt;= (rt != nullptr ? (unique ? rt-&gt;sz : rt-&gt;sum) : 0));
+        Node* cur = rt;
+        while(true){
+            if(cur-&gt;child[0] and k &lt;= (unique ? cur-&gt;child[0]-&gt;sz : cur-&gt;child[0]-&gt;sum)){
+                cur = cur-&gt;child[0];
+            }else{
+                if(cur-&gt;child[0]) k -= (unique ? cur-&gt;child[0]-&gt;sz : cur-&gt;child[0]-&gt;sum);
+                if(k &lt;= cur-&gt;cnt){
+                    cur-&gt;splay();
+                    rt = cur;
+                    return iterator{cur};
+                }
+                k -= (unique ? 1 : cur-&gt;cnt);
+                cur = cur-&gt;child[1];
+            }
+        }
+    }
+    static void destroy(Node* const node){
+        if(!node) return;
+        for(Node* const child: node-&gt;child){
+            destroy(child);
+        }
+        delete node;
+    }
+    bool empty() const{
+        return rt == nullptr;
+    }
+    size_t sum() const{
+        return (rt == nullptr ? 0 : rt-&gt;sum);
+    }
+    size_t size() const{
+        return (rt == nullptr ? 0 : rt-&gt;sz);
+    }
+
+    template&lt;bool side = false&gt;
+    iterator begin(){
+        return iterator{extremum&lt;side&gt;(rt)};
+    }
+    iterator rend(){
+        return iterator{nullptr};
+    }
+    iterator end(){
+        return iterator{nullptr};
+    }
+    iterator find(const T&amp; key){
+        Node* cur = rt;
+        while(cur and key != cur-&gt;val){
+            const auto nex = cur-&gt;child[key &gt; cur-&gt;val];
+            if(!nex) {
+                cur-&gt;splay();
+                rt = cur;
+            }
+            cur = nex;
+        }
+        return iterator{cur};
+    }
+    iterator lower_bound(const T&amp; key){
+        Node* cur = rt;
+        Node* ret = nullptr;
+        while(cur){
+            if(cur-&gt;val &gt; key){
+                ret = cur;
+                cur = cur-&gt;child[0];
+            }else if(cur-&gt;val == key){
+                ret = cur;
+                break;
+            }else{
+                cur = cur-&gt;child[1];
+            }
+        }
+        if(ret){
+            ret-&gt;splay();
+            rt = ret;
+        }
+        return iterator{ret};
+    }
+    Node* join(Node* const arg1, Node* const arg2){
+        if(!arg1){
+            arg2-&gt;parent = nullptr;
+            return arg2;
+        }
+        arg1-&gt;parent = nullptr;
+        Node* const mx = extremum&lt;true&gt;(arg1);
+        mx-&gt;splay();
+        rt = mx;
+        assert(mx-&gt;child[1] == nullptr);
+        mx-&gt;child[1] = arg2;
+        mx-&gt;parent = nullptr;
+        if(arg2) arg2-&gt;parent = mx;
+        mx-&gt;maintain();
+        return mx;
+    }
+    void erase(const iterator itr){
+        if(!itr.node) return;
+        Node* x = itr.node;
+        x-&gt;splay();
+        rt = x;
+        rt = join(x-&gt;child[0], x-&gt;child[1]);
+    }
+    void extract(const iterator itr){
+        if(!itr.node) return;
+        if(itr.node-&gt;cnt == 1) erase(itr);
+        else{
+            itr.node-&gt;cnt--;
+            itr.node-&gt;splay();
+            rt = itr.node;
+        }
+    }
+};
+typedef pair&lt;int, int&gt; PII;
+
+int main(){
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    SplayTree&lt;int&gt; st;
+    int n;
+    cin &gt;&gt; n;
+    while(n--){
+        int op;
+        cin &gt;&gt; op;
+        if(op == 1){
+            int tv;
+            cin &gt;&gt; tv;
+            st.insert(tv);
+        }else if(op == 2){
+            int tv;
+            cin &gt;&gt; tv;
+            st.extract(st.find(tv));
+        }else if(op == 3){
+            int tv;
+            cin &gt;&gt; tv;
+            auto itr = st.find(tv);
+            auto res = st.rank(tv);
+            cout &lt;&lt; res.second - (itr.node-&gt;cnt) + 1 &lt;&lt; endl;
+        }else if(op == 4){
+            int tv;
+            cin &gt;&gt; tv;
+            auto itr = st.kth(tv);
+            cout &lt;&lt; itr.node-&gt;val &lt;&lt; endl;
+        }else if(op == 5){
+            int tv;
+            cin &gt;&gt; tv;
+            auto itr = st.lower_bound(tv);
+            if(itr == st.end()) itr = st.begin&lt;true&gt;();
+            else --itr;
+            cout &lt;&lt; itr.node-&gt;val &lt;&lt; endl;
+        }else{
+            int tv;
+            cin &gt;&gt; tv;
+            auto itr = st.lower_bound(tv);
+            if(itr.node-&gt;val == tv) ++itr;
+            cout &lt;&lt; itr.node-&gt;val &lt;&lt; endl;
+        }
+    }
+    return 0;
+}
+</code></pre>
+<h3 id="avl树">AVL树<a class="headerlink" href="#avl树" title="Permanent link">&para;</a></h3>
+<pre><code class="language-cpp">/**
+ * @brief AVL 树
+ * @author dianhsu
+ * @date 2021/05/25
+ * @ref https://zh.wikipedia.org/wiki/AVL树
+ * */
+#include &lt;bits/stdc++.h&gt;
+
+template&lt;class T&gt;
+struct AVLNode {
+    T data;
+    AVLNode&lt;T&gt; *leftChild;
+    AVLNode&lt;T&gt; *rightChild;
+    int height;
+
+    AVLNode(T data): data(data), height(1), leftChild(nullptr), rightChild(nullptr) { }
+
+    ~AVLNode() {
+        delete leftChild;
+        delete rightChild;
+    }
+};
+
+template&lt;class T&gt;
+class AVL {
+public:
+    AVL() {
+        root = nullptr;
+    }
+
+    ~AVL() {
+        delete root;
+    }
+
+    /**
+     * @brief 将结点插入到AVL树中
+     * @param val 需要插入的值
+     * @note 如果发现这个树中已经有这个值存在了，就不会进行任何操作
+     * */
+    void insert(T val) {
+        _insert(&amp;root, val);
+    }
+
+    /**
+     * @brief 检查结点是否在AVL树中
+     * @param val 需要检查的值
+     * */
+    bool exist(T val) {
+        auto ptr = &amp;root;
+        while (*ptr != nullptr) {
+            if (val == (*ptr)-&gt;data) {
+                return true;
+            } else if (val &lt; (*ptr)-&gt;data) {
+                *ptr = (*ptr)-&gt;leftChild;
+            } else {
+                *ptr = (*ptr)-&gt;rightChild;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * @brief 找到值为val的结点
+     * @param val 目标值
+     * @return 返回值为指向该结点的指针的地址
+     */
+    AVLNode&lt;T&gt; **find(T val) {
+        auto ptr = &amp;root;
+        while ((*ptr) != nullptr) {
+            if (val == (*ptr)-&gt;data) {
+                break;
+            } else if (val &lt; (*ptr)-&gt;data) {
+                *ptr = (*ptr)-&gt;leftChild;
+            } else {
+                *ptr = (*ptr)-&gt;rightChild;
+            }
+        }
+        return ptr;
+    }
+
+    /**
+     * @brief 删除结点
+     * @note 首先找到结点，然后将结点旋转到叶子结点，然后回溯检查树的平衡性
+     * @param val 需要删除的结点的值
+     * @note 这个地方需要递归寻找该值的结点，因为需要回溯更新平衡树
+     * */
+    void remove(T val) {
+        _remove(&amp;root, val);
+    }
+
+
+private:
+    void _remove(AVLNode&lt;T&gt; **ptr, T val) {
+        if (*ptr == nullptr) {
+            return;
+        }
+        if ((*ptr)-&gt;data == val) {
+            _rotateNodeToLeaf(ptr);
+        } else if ((*ptr)-&gt;data &lt; val) {
+            _remove(&amp;((*ptr)-&gt;rightChild), val);
+        } else {
+            _remove(&amp;((*ptr)-&gt;leftChild), val);
+        }
+        // 完了之后回溯，重新平衡二叉树
+        _balance(ptr);
+        _updateHeight(*ptr);
+    }
+
+    /**
+     * @brief 将一个结点旋转到叶子结点
+     * @param ptr 将要被旋转至叶子的结点的指针的地址
+     * @note 旋转的时候，将当前结点旋转到高度比较小的一边。
+     */
+    void _rotateNodeToLeaf(AVLNode&lt;T&gt; **ptr) {
+        // 当前结点已经是叶子结点了
+        if ((*ptr)-&gt;leftChild == nullptr and (*ptr)-&gt;rightChild == nullptr) {
+            *ptr = nullptr;
+            return;
+        }
+        int leftHeight = (*ptr)-&gt;leftChild != nullptr ? (*ptr)-&gt;leftChild-&gt;height : 0;
+        int rightHeight = (*ptr)-&gt;rightChild != nullptr ? (*ptr)-&gt;rightChild-&gt;height : 0;
+        // 左边高度比较小，左旋
+        if (leftHeight &lt;= rightHeight) {
+            _leftRotate(ptr);
+            _rotateNodeToLeaf(&amp;((*ptr)-&gt;leftChild));
+        } else {
+            // 右旋
+            _rightRotate(ptr);
+            _rotateNodeToLeaf(&amp;((*ptr)-&gt;rightChild));
+        }
+        _balance(ptr);
+        _updateHeight(*ptr);
+    }
+
+    /**
+     * @brief 插入结点
+     *
+     * */
+    void _insert(AVLNode&lt;T&gt; **ptr, T val) {
+        if (*ptr == nullptr) {
+            *ptr = new AVLNode&lt;T&gt;(val);
+            return;
+        }
+        if (val &lt; (*ptr)-&gt;data) {
+            _insert(&amp;((*ptr)-&gt;leftChild), val);
+        } else if (val &gt; (*ptr)-&gt;data) {
+            _insert(&amp;((*ptr)-&gt;rightChild), val);
+        } else {
+            // 如果当前平衡二叉树中已经存在这个结点了，不做任何处理
+            return;
+        }
+        _balance(ptr);
+        _updateHeight(*ptr);
+    }
+
+    /**
+     * @brief 平衡结点
+     *
+     * */
+    void _balance(AVLNode&lt;T&gt; **ptr) {
+        if (*ptr == nullptr) return;
+        int leftHeight = (*ptr)-&gt;leftChild != nullptr ? (*ptr)-&gt;leftChild-&gt;height : 0;
+        int rightHeight = (*ptr)-&gt;rightChild != nullptr ? (*ptr)-&gt;rightChild-&gt;height : 0;
+        if (abs(leftHeight - rightHeight) &lt;= 1) return;
+
+        if (leftHeight &lt; rightHeight) {
+            auto rightElement = (*ptr)-&gt;rightChild;
+            int rightElementLeftHeight = rightElement-&gt;leftChild != nullptr ? rightElement-&gt;leftChild-&gt;height : 0;
+            int rightElementRightHeight = rightElement-&gt;rightChild != nullptr ? rightElement-&gt;rightChild-&gt;height : 0;
+            if (rightElementLeftHeight &lt; rightElementRightHeight) {
+                // RR
+                _leftRotate(ptr);
+            } else {
+                // RL
+                _rightRotate(&amp;((*ptr)-&gt;rightChild));
+                _leftRotate(ptr);
+            }
+        } else {
+            auto leftElement = (*ptr)-&gt;leftChild;
+            int leftElementLeftHeight = leftElement-&gt;leftChild != nullptr ? leftElement-&gt;leftChild-&gt;height : 0;
+            int leftElementRightHeight = leftElement-&gt;rightChild != nullptr ? leftElement-&gt;rightChild-&gt;height : 0;
+            if (leftElementLeftHeight &gt; leftElementRightHeight) {
+                // LL
+                _rightRotate(ptr);
+            } else {
+                // LR
+                _leftRotate(&amp;((*ptr)-&gt;leftChild));
+                _rightRotate(ptr);
+            }
+        }
+    }
+
+    /**
+     * @brief 右旋
+     *
+     * */
+    void _rightRotate(AVLNode&lt;T&gt; **ptr) {
+        auto tmp = (*ptr)-&gt;leftChild;
+        (*ptr)-&gt;leftChild = tmp-&gt;rightChild;
+        tmp-&gt;rightChild = *ptr;
+        _updateHeight(tmp);
+        _updateHeight(*ptr);
+        *ptr = tmp;
+    }
+
+    /**
+     * @brief 左旋
+     * */
+    void _leftRotate(AVLNode&lt;T&gt; **ptr) {
+        auto tmp = (*ptr)-&gt;rightChild;
+        (*ptr)-&gt;rightChild = tmp-&gt;leftChild;
+        tmp-&gt;leftChild = *ptr;
+        _updateHeight(tmp);
+        _updateHeight(*ptr);
+        *ptr = tmp;
+    }
+
+    void _updateHeight(AVLNode&lt;T&gt; *ptr) {
+        if (ptr == nullptr) return;
+        int leftHeight = ptr-&gt;leftChild != nullptr ? ptr-&gt;leftChild-&gt;height : 0;
+        int rightHeight = ptr-&gt;rightChild != nullptr ? ptr-&gt;rightChild-&gt;height : 0;
+        ptr-&gt;height = std::max(leftHeight, rightHeight) + 1;
+    }
+
+    AVLNode&lt;T&gt; *root;
+};
+
+int main() {
+    auto avl = new AVL&lt;int&gt;();
+    int n = 20;
+    std::random_device rd{};
+    std::mt19937 gen{rd()};
+    std::normal_distribution&lt;&gt; d{100, 100};
+    std::uniform_int_distribution&lt;int&gt; u(0, INT_MAX &gt;&gt; 1);
+    std::vector&lt;int&gt; vec;
+    for (int i = 0; i &lt; n; ++i) {
+        vec.push_back((int) std::round(d(gen)));
+        //vec.push_back(i);
+    }
+    for (auto it : vec) {
+        avl-&gt;insert(it);
+    }
+    avl-&gt;remove(15);
+    avl-&gt;remove(32);
+    avl-&gt;remove(31);
+    std::cout &lt;&lt; *avl &lt;&lt; std::endl;
+    delete avl;
+    return 0;
+}
+</code></pre>
+
+
+
+
+
+<h2 id="__comments">评论</h2>
+<!-- Insert generated snippet here -->
+<script src="https://giscus.app/client.js" data-repo="dianhsu/wiki" data-repo-id="R_kgDOIiWxEg" data-category="General"
+    data-category-id="DIC_kwDOIiWxEs4CU4ha" data-mapping="title" data-strict="0" data-reactions-enabled="1"
+    data-emit-metadata="0" data-input-position="bottom" data-theme="preferred_color_scheme" data-lang="zh-CN"
+    crossorigin="anonymous" async>
+    </script>
+
+<!-- Synchronize Giscus theme with palette -->
+<script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    /* Set palette on initial load */
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+        var theme = palette.color.scheme === "slate" ? "dark" : "light"
+        giscus.setAttribute("data-theme", theme)
+    }
+
+    /* Register event handlers after documented loaded */
+    document.addEventListener("DOMContentLoaded", function () {
+        var ref = document.querySelector("[data-md-component=palette]")
+        ref.addEventListener("change", function () {
+            var palette = __md_get("__palette")
+            if (palette && typeof palette.color === "object") {
+                var theme = palette.color.scheme === "slate" ? "dark" : "light"
+
+                /* Instruct Giscus to change theme */
+                var frame = document.querySelector(".giscus-frame")
+                frame.contentWindow.postMessage(
+                    { giscus: { setConfig: { theme } } },
+                    "https://giscus.app"
+                )
+            }
+        })
+    })
+</script>
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.efa0ade1.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="../javascripts/highlight.js"></script>
+      
+    
+  </body>
+</html>

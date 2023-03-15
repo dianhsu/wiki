@@ -1,93 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://example.com/</loc>
-         <lastmod>2022-12-02</lastmod>
+         <loc>https://dianhsu.github.io/wiki/</loc>
+         <lastmod>2023-03-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/about/</loc>
-         <lastmod>2022-12-02</lastmod>
+         <loc>https://dianhsu.github.io/wiki/data_structure/</loc>
+         <lastmod>2023-03-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/mm2r/Boss/</loc>
-         <lastmod>2022-12-02</lastmod>
+         <loc>https://dianhsu.github.io/wiki/game/</loc>
+         <lastmod>2023-03-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/mm2r/%E5%87%BB%E7%A0%B4%E5%A5%96%E5%8A%B1/</loc>
-         <lastmod>2022-12-02</lastmod>
+         <loc>https://dianhsu.github.io/wiki/geometry/</loc>
+         <lastmod>2023-03-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/mm2r/%E5%8F%A4%E6%B4%9B%E6%96%87/</loc>
-         <lastmod>2022-12-02</lastmod>
+         <loc>https://dianhsu.github.io/wiki/graph/</loc>
+         <lastmod>2023-03-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/mm2r/%E5%91%A8%E7%9B%AE%E5%BA%97/</loc>
-         <lastmod>2022-12-02</lastmod>
+         <loc>https://dianhsu.github.io/wiki/math/</loc>
+         <lastmod>2023-03-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/mm2r/%E5%9C%B0%E7%82%B9%E5%88%97%E8%A1%A8/</loc>
-         <lastmod>2022-12-02</lastmod>
+         <loc>https://dianhsu.github.io/wiki/miscellaneous/</loc>
+         <lastmod>2023-03-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/mm2r/%E5%A4%A7%E7%A0%B4%E5%9D%8F%E5%AF%86%E7%A0%81/</loc>
-         <lastmod>2022-12-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://example.com/mm2r/%E5%BC%95%E6%93%8E%E6%8E%92%E8%A1%8C/</loc>
-         <lastmod>2022-12-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://example.com/mm2r/%E6%88%98%E8%BD%A6/</loc>
-         <lastmod>2022-12-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://example.com/mm2r/%E6%89%93%E6%8D%9E%E7%89%A9/</loc>
-         <lastmod>2022-12-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://example.com/mm2r/%E6%94%AF%E7%BA%BF%E4%BB%BB%E5%8A%A1/</loc>
-         <lastmod>2022-12-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://example.com/mm2r/%E9%A6%96%E9%A1%B5/</loc>
-         <lastmod>2022-12-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://example.com/mm2r/%E6%95%B0%E6%8D%AE/C%E8%A3%85%E7%BD%AE/</loc>
-         <lastmod>2022-12-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://example.com/mm2r/%E6%95%B0%E6%8D%AE/S-E/</loc>
-         <lastmod>2022-12-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://example.com/mm2r/%E6%95%B0%E6%8D%AE/%E4%B8%BB%E7%82%AE/</loc>
-         <lastmod>2022-12-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://example.com/mm2r/%E6%95%B0%E6%8D%AE/%E5%89%AF%E7%82%AE/</loc>
-         <lastmod>2022-12-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://example.com/mm2r/%E6%95%B0%E6%8D%AE/%E5%BC%95%E6%93%8E/</loc>
-         <lastmod>2022-12-02</lastmod>
+         <loc>https://dianhsu.github.io/wiki/string/</loc>
+         <lastmod>2023-03-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

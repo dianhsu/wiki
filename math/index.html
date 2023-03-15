@@ -1,0 +1,2149 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://dianhsu.github.io/wiki/math/">
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../string/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.3">
+    
+    
+      
+        <title>首页 - dianhsu's wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.c4a75a56.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#模数int" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="dianhsu&#39;s wiki" class="md-header__button md-logo" aria-label="dianhsu's wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            dianhsu's wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              首页
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href=".." class="md-tabs__link">
+      首页
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
+        数学
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../string/" class="md-tabs__link">
+      字符串
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../game/" class="md-tabs__link">
+      游戏
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../graph/" class="md-tabs__link">
+      图论
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../geometry/" class="md-tabs__link">
+      计算几何
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../data_structure/" class="md-tabs__link">
+      数据结构
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../miscellaneous/" class="md-tabs__link">
+      杂项
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="dianhsu&#39;s wiki" class="md-nav__button md-logo" aria-label="dianhsu's wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    dianhsu's wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        首页
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          数学
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          数学
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          首页
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        首页
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#模数int" class="md-nav__link">
+    模数(int)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#素数筛" class="md-nav__link">
+    素数筛
+  </a>
+  
+    <nav class="md-nav" aria-label="素数筛">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#单个正整数判断是不是质数" class="md-nav__link">
+    单个正整数判断是不是质数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#埃拉托斯特尼筛法" class="md-nav__link">
+    埃拉托斯特尼筛法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#线性筛欧式筛" class="md-nav__link">
+    线性筛（欧式筛）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#奇数筛" class="md-nav__link">
+    奇数筛
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#类欧几里得算法" class="md-nav__link">
+    类欧几里得算法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#拓展欧几里得" class="md-nav__link">
+    拓展欧几里得
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#欧拉函数" class="md-nav__link">
+    欧拉函数
+  </a>
+  
+    <nav class="md-nav" aria-label="欧拉函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#单个欧拉函数" class="md-nav__link">
+    单个欧拉函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#批量求欧拉函数线性筛" class="md-nav__link">
+    批量求欧拉函数（线性筛）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#筛法求约数个数线性筛" class="md-nav__link">
+    筛法求约数个数（线性筛）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#中国剩余定理--扩展中国剩余定理" class="md-nav__link">
+    中国剩余定理 &amp; 扩展中国剩余定理
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#乘法逆元" class="md-nav__link">
+    乘法逆元
+  </a>
+  
+    <nav class="md-nav" aria-label="乘法逆元">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#扩展欧几里得算法" class="md-nav__link">
+    扩展欧几里得算法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#快速幂算法" class="md-nav__link">
+    快速幂算法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#批量乘法逆元" class="md-nav__link">
+    批量乘法逆元
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#阶乘逆元求组合数" class="md-nav__link">
+    阶乘逆元（求组合数）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#卢卡斯定理" class="md-nav__link">
+    卢卡斯定理
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bsgs" class="md-nav__link">
+    BSGS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exbsgs" class="md-nav__link">
+    exBSGS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cayley-公式caylays-formula" class="md-nav__link">
+    Cayley 公式（Caylay's formula）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#莫比乌斯函数线性筛" class="md-nav__link">
+    莫比乌斯函数（线性筛）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#杜教筛" class="md-nav__link">
+    杜教筛
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#康拓展开" class="md-nav__link">
+    康拓展开
+  </a>
+  
+    <nav class="md-nav" aria-label="康拓展开">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#正向" class="md-nav__link">
+    正向
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#反向" class="md-nav__link">
+    反向
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#miller-rabin--pollard-rho" class="md-nav__link">
+    Miller Rabin &amp; Pollard Rho
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#线性代数" class="md-nav__link">
+    线性代数
+  </a>
+  
+    <nav class="md-nav" aria-label="线性代数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#矩阵" class="md-nav__link">
+    矩阵
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#高斯消元" class="md-nav__link">
+    高斯消元
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#线性基" class="md-nav__link">
+    线性基
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#自适应辛普森" class="md-nav__link">
+    自适应辛普森
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#多项式" class="md-nav__link">
+    多项式
+  </a>
+  
+    <nav class="md-nav" aria-label="多项式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#快速傅立叶变换" class="md-nav__link">
+    快速傅立叶变换
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../string/" class="md-nav__link">
+        字符串
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../game/" class="md-nav__link">
+        游戏
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../graph/" class="md-nav__link">
+        图论
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../geometry/" class="md-nav__link">
+        计算几何
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data_structure/" class="md-nav__link">
+        数据结构
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../miscellaneous/" class="md-nav__link">
+        杂项
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#模数int" class="md-nav__link">
+    模数(int)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#素数筛" class="md-nav__link">
+    素数筛
+  </a>
+  
+    <nav class="md-nav" aria-label="素数筛">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#单个正整数判断是不是质数" class="md-nav__link">
+    单个正整数判断是不是质数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#埃拉托斯特尼筛法" class="md-nav__link">
+    埃拉托斯特尼筛法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#线性筛欧式筛" class="md-nav__link">
+    线性筛（欧式筛）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#奇数筛" class="md-nav__link">
+    奇数筛
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#类欧几里得算法" class="md-nav__link">
+    类欧几里得算法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#拓展欧几里得" class="md-nav__link">
+    拓展欧几里得
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#欧拉函数" class="md-nav__link">
+    欧拉函数
+  </a>
+  
+    <nav class="md-nav" aria-label="欧拉函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#单个欧拉函数" class="md-nav__link">
+    单个欧拉函数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#批量求欧拉函数线性筛" class="md-nav__link">
+    批量求欧拉函数（线性筛）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#筛法求约数个数线性筛" class="md-nav__link">
+    筛法求约数个数（线性筛）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#中国剩余定理--扩展中国剩余定理" class="md-nav__link">
+    中国剩余定理 &amp; 扩展中国剩余定理
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#乘法逆元" class="md-nav__link">
+    乘法逆元
+  </a>
+  
+    <nav class="md-nav" aria-label="乘法逆元">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#扩展欧几里得算法" class="md-nav__link">
+    扩展欧几里得算法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#快速幂算法" class="md-nav__link">
+    快速幂算法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#批量乘法逆元" class="md-nav__link">
+    批量乘法逆元
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#阶乘逆元求组合数" class="md-nav__link">
+    阶乘逆元（求组合数）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#卢卡斯定理" class="md-nav__link">
+    卢卡斯定理
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bsgs" class="md-nav__link">
+    BSGS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exbsgs" class="md-nav__link">
+    exBSGS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cayley-公式caylays-formula" class="md-nav__link">
+    Cayley 公式（Caylay's formula）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#莫比乌斯函数线性筛" class="md-nav__link">
+    莫比乌斯函数（线性筛）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#杜教筛" class="md-nav__link">
+    杜教筛
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#康拓展开" class="md-nav__link">
+    康拓展开
+  </a>
+  
+    <nav class="md-nav" aria-label="康拓展开">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#正向" class="md-nav__link">
+    正向
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#反向" class="md-nav__link">
+    反向
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#miller-rabin--pollard-rho" class="md-nav__link">
+    Miller Rabin &amp; Pollard Rho
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#线性代数" class="md-nav__link">
+    线性代数
+  </a>
+  
+    <nav class="md-nav" aria-label="线性代数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#矩阵" class="md-nav__link">
+    矩阵
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#高斯消元" class="md-nav__link">
+    高斯消元
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#线性基" class="md-nav__link">
+    线性基
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#自适应辛普森" class="md-nav__link">
+    自适应辛普森
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#多项式" class="md-nav__link">
+    多项式
+  </a>
+  
+    <nav class="md-nav" aria-label="多项式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#快速傅立叶变换" class="md-nav__link">
+    快速傅立叶变换
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>首页</h1>
+
+<h2 id="模数int">模数(int)<a class="headerlink" href="#模数int" title="Permanent link">&para;</a></h2>
+<pre><code class="language-cpp">class MInt{
+public:
+    static int selfPow(int base, int p){
+        int ret = 1;
+        while(p){
+            if(p &amp; 1) ret = (ret * 1ll * base) % MOD;
+            p &gt;&gt;= 1;
+            base = (base * 1ll * base) % MOD;
+        }
+        return ret;
+    }
+    MInt(): val(0) {}
+    MInt(int tv): val(tv) {}
+    MInt operator + (const MInt&amp; arg) const { return MInt((val * 1ll + arg.val) % MOD); }
+    MInt operator - (const MInt&amp; arg) const { return MInt((val * 1ll + MOD - arg.val) % MOD); }
+    MInt operator * (const MInt&amp; arg) const { return MInt((val * 1ll * arg.val) % MOD); }
+    MInt operator / (const MInt&amp; arg) const { return MInt((val * 1ll * selfPow(arg.val, MOD - 2)) % MOD); }
+    MInt operator + (const int argv) const { return MInt((val * 1ll + argv) % MOD); }
+    MInt operator - (const int argv) const { return MInt((val * 1ll + MOD - argv) % MOD); }
+    MInt operator * (const int argv) const { return MInt((val * 1ll * argv) % MOD); }
+    MInt operator / (const int argv) const { return MInt((val * 1ll * selfPow(argv, MOD - 2)) % MOD); }
+    MInt&amp; operator += (const MInt&amp; arg){
+        this-&gt;val = (this-&gt;val * 1ll + arg.val) % MOD;
+        return *this;
+    }
+    MInt&amp; operator -= (const MInt&amp; arg){
+        this-&gt;val = (this-&gt;val * 1ll + MOD - arg.val) % MOD;
+        return *this;
+    }
+    MInt&amp; operator *= (const MInt&amp; arg){
+        this-&gt;val = (this-&gt;val * 1ll * arg.val) % MOD;
+        return *this;
+    }
+    MInt&amp; operator /= (const MInt&amp; arg){
+        this-&gt;val = (this-&gt;val * 1ll * selfPow(arg.val, MOD - 2)) % MOD;
+        return *this;
+    }
+    MInt&amp; operator += (const int argv){
+        this-&gt;val = (this-&gt;val * 1ll + argv) % MOD;
+        return *this;
+    }
+    MInt&amp; operator -= (const int argv){
+        this-&gt;val = (this-&gt;val * 1ll + MOD - argv) % MOD;
+        return *this;
+    }
+    MInt&amp; operator *= (const int argv){
+        this-&gt;val = (this-&gt;val * 1ll * argv) % MOD;
+        return *this;
+    }
+    MInt&amp; operator /= (const int argv){
+        this-&gt;val = (this-&gt;val * 1ll * selfPow(argv, MOD - 2)) % MOD;
+        return *this;
+    }
+    MInt&amp; operator = (const MInt&amp; arg){
+        this-&gt;val = arg.val % MOD;
+        return *this;
+    }
+    MInt&amp; operator = (const int argv){
+        this-&gt;val = argv % MOD;
+        return *this;
+    }
+    bool operator == (const int argv) const{
+        return val == argv;
+    }
+
+    friend MInt operator + (const int argv, const MInt&amp; arg){
+        return MInt((arg.val * 1ll + argv) % MOD);
+    }
+    friend MInt operator - (const int argv, const MInt&amp; arg){
+        return MInt((argv * 1ll + MOD - arg.val) % MOD);
+    }
+    friend MInt operator * (const int argv, const MInt&amp; arg){
+        return MInt((arg.val * 1ll * argv) % MOD);
+    }
+    friend MInt operator / (const int argv, const MInt&amp; arg){
+        return MInt((argv * 1ll * MInt::selfPow(arg.val, MOD - 2))% MOD);
+    }
+    friend istream&amp; operator &gt;&gt; (istream&amp; its, MInt&amp; arg){
+        its &gt;&gt; arg.val;
+        return its;
+    }
+    friend ostream&amp; operator &lt;&lt; (ostream&amp; ots, const MInt&amp; arg){
+        ots &lt;&lt; arg.val;
+        return ots;
+    }
+    friend int abs(const MInt&amp; arg){
+        return abs(arg.val);
+    }
+private:
+    int val;
+};
+</code></pre>
+<h2 id="素数筛">素数筛<a class="headerlink" href="#素数筛" title="Permanent link">&para;</a></h2>
+<h3 id="单个正整数判断是不是质数">单个正整数判断是不是质数<a class="headerlink" href="#单个正整数判断是不是质数" title="Permanent link">&para;</a></h3>
+<pre><code class="language-cpp">bool isPrime(int x){
+    if(x &lt;= 1) return false;
+    int cur = 2;
+    while(cur * cur &lt;= x){
+        if(x % cur != 0){
+            return false;
+        }
+        ++cur;
+    }
+    return true;
+}
+</code></pre>
+<h3 id="埃拉托斯特尼筛法">埃拉托斯特尼筛法<a class="headerlink" href="#埃拉托斯特尼筛法" title="Permanent link">&para;</a></h3>
+<pre><code class="language-cpp">template&lt;int N&gt;
+vector&lt;int&gt; SieveOfEratosthenes() {
+    vector&lt;int&gt; prime;
+    bitset&lt;N + 1&gt; notPrime;
+    notPrime[0] = notPrime[1] = 1;
+    for (int i = 2; i &lt;= N; ++i) {
+        if (!notPrime[i]) {
+            prime.push_back(i);
+            if ((long long) i * i &lt;= N) {
+                for (int j = i * i; j &lt;= N; j += i) {
+                    notPrime[j] = 1;
+                }
+            }
+        }
+    }
+    return prime;
+}
+
+</code></pre>
+<h3 id="线性筛欧式筛">线性筛（欧式筛）<a class="headerlink" href="#线性筛欧式筛" title="Permanent link">&para;</a></h3>
+<pre><code class="language-cpp">template&lt;int N&gt;
+vector&lt;int&gt; SieveOfEuler() {
+    vector&lt;int&gt; prime;
+    bitset&lt;N + 1&gt; notPrime;
+    for (int i = 2; i &lt;= N; ++i) {
+        if (!notPrime[i]) {
+            prime.push_back(i);
+        }
+        for (auto it : prime) {
+            if ((long long) it * i &lt;= N) {
+                notPrime[it * i] = 1;
+                if (i % it == 0) {
+                    break;
+                }
+            }else{
+                break;
+            }
+        }
+    }
+    return prime;
+}
+</code></pre>
+<h3 id="奇数筛">奇数筛<a class="headerlink" href="#奇数筛" title="Permanent link">&para;</a></h3>
+<pre><code class="language-cpp">template&lt;int N&gt;
+vector&lt;int&gt; OddFilter() {
+    if (N &lt; 2) return {};
+    vector&lt;int&gt; prime{2};
+    bitset&lt;N + 1&gt; notPrime;
+    notPrime[0] = notPrime[1] = 1;
+    for (int i = 3; i * i &lt;= N; i += 2) {
+        if (!notPrime[i]) {
+            for (int j = i; j * i &lt;= N; j += 2) {
+                notPrime[j * i] = 1;
+            }
+        }
+    }
+    for (int i = 3; i &lt;= N; i += 2) {
+        if (!notPrime[i]) {
+            prime.push_back(i);
+        }
+    }
+    return prime;
+}
+</code></pre>
+<h2 id="类欧几里得算法">类欧几里得算法<a class="headerlink" href="#类欧几里得算法" title="Permanent link">&para;</a></h2>
+<div class="arithmatex">\[
+    f(N, a, b, c) = \sum_{i = 0}^N \lfloor \frac{a \times i + b}{c} \rfloor \\
+    g(N, a, b, c) = \sum_{i = 0}^N \lfloor \frac{a \times i + b}{c} \rfloor ^2 \\
+    h(N, a, b, c) = \sum_{i = 0}^N i \times \lfloor \frac{a \times i + b}{c} \rfloor
+\]</div>
+<pre><code class="language-cpp">##include &lt;iostream&gt;
+##include &lt;algorithm&gt;
+
+using namespace std;
+
+const int MOD = 998244353;
+int qPow(int b, int p){
+    int ret = 1;
+    while(p){
+        if(p &amp; 1) ret = 1ll * ret * b % MOD;
+        b = 1ll * b * b % MOD;
+        p &gt;&gt;= 1;
+    }
+    return ret;
+}
+const int inv2 = qPow(2, MOD - 2);
+const int inv6 = qPow(6, MOD - 2);
+template&lt;typename T&gt;
+tuple&lt;T, T, T&gt; euclidean(T n, T a, T b, T c){
+    T ac = a / c, bc = b / c, m = (a * n + b) / c, n1 = n + 1, n21 = n * 2 + 1;
+    if(a == 0){
+        return {
+            bc * n1 % MOD, 
+            bc * n % MOD * n1 % MOD * inv2 % MOD,
+            bc * bc % MOD * n1 % MOD
+        };
+    }
+    if(a &gt;= c or b &gt;= c){
+        T f = n * n1 % MOD * inv2 % MOD * ac % MOD + bc * n1 % MOD;
+        T g = ac * n % MOD * n1 % MOD * n21 % MOD * inv6 % MOD + bc * n % MOD * n1 % MOD * inv2 % MOD;
+        T h = ac * ac % MOD * n % MOD * n1 % MOD * n21 % MOD * inv6 % MOD + bc * bc % MOD * n1 % MOD + ac * bc % MOD * n % MOD * n1 % MOD;
+        f %= MOD, g %= MOD, h %= MOD;
+        auto [tf, tg, th] = euclidean(n, a % c, b % c, c);
+        h += th + 2 * bc % MOD * tf % MOD + 2 * ac % MOD * tg % MOD;
+        g += tg;
+        f += tf;
+        return {f % MOD, g % MOD, h % MOD};
+    }
+    auto [tf, tg, th] = euclidean(m - 1, c, c - b - 1, a);
+    T f = (n * m % MOD + MOD - tf) % MOD;
+    T g = (n * m % MOD * n1 % MOD + MOD - th + MOD - tf) % MOD * inv2 % MOD;
+    T h = (n * m % MOD * (m + 1) % MOD + 2 * (MOD - tg) + 2 * (MOD - tf) + MOD - f) % MOD;
+    return {f, g, h};
+}
+typedef long long ll;
+int main(){
+    int t;
+    cin &gt;&gt; t;
+    while(t--){
+        ll n, a, b, c;
+        cin &gt;&gt; n &gt;&gt; a &gt;&gt; b &gt;&gt; c;
+        auto [f, g, h] = euclidean(n, a, b, c);
+        cout &lt;&lt; f &lt;&lt; &quot; &quot; &lt;&lt; h &lt;&lt; &quot; &quot; &lt;&lt; g &lt;&lt; endl;
+    }
+    return 0;
+}
+
+</code></pre>
+<h2 id="拓展欧几里得">拓展欧几里得<a class="headerlink" href="#拓展欧几里得" title="Permanent link">&para;</a></h2>
+<pre><code class="language-cpp">template&lt;typename T&gt;
+T exgcd(T a, T b, T&amp; x, T&amp; y){
+    if(b == 0){
+        x = 1;
+        y = 0;
+        return a;
+    }
+    T d = exgcd(b, a % b, y, x);
+    y -= (a / b) * x;
+    return d;
+}
+</code></pre>
+<h2 id="欧拉函数">欧拉函数<a class="headerlink" href="#欧拉函数" title="Permanent link">&para;</a></h2>
+<h3 id="单个欧拉函数">单个欧拉函数<a class="headerlink" href="#单个欧拉函数" title="Permanent link">&para;</a></h3>
+<pre><code class="language-cpp">int euler_phi(int n) {
+  int ans = n;
+  for (int i = 2; i * i &lt;= n; i++)
+    if (n % i == 0) {
+      ans = ans / i * (i - 1);
+      while (n % i == 0) n /= i;
+    }
+  if (n &gt; 1) ans = ans / n * (n - 1);
+  return ans;
+}
+</code></pre>
+<h3 id="批量求欧拉函数线性筛">批量求欧拉函数（线性筛）<a class="headerlink" href="#批量求欧拉函数线性筛" title="Permanent link">&para;</a></h3>
+<pre><code class="language-cpp">vector&lt;int&gt; eularFunction(int n){
+    vector&lt;int&gt; isPrime(n + 1, 1), phi(n + 1, 0);
+    vector&lt;int&gt; prime;
+    int cnt = 0;
+    isPrime[1] = 0;
+    phi[1] = 1;
+    for(int i = 2; i &lt;= n; ++i){
+        if(isPrime[i]){
+            prime.push_back(i);
+            phi[i] = i - 1;
+        }
+        for(auto it: prime){
+            if(i * it &gt; n) break;
+            isPrime[i * it] = 0;
+            if(i % it){
+                phi[i * it] = phi[i] * phi[it];
+            }else{
+                phi[i * it] = phi[i] * it;
+                break;
+            }
+        }
+    }
+    return phi;
+}
+</code></pre>
+<h3 id="筛法求约数个数线性筛">筛法求约数个数（线性筛）<a class="headerlink" href="#筛法求约数个数线性筛" title="Permanent link">&para;</a></h3>
+<pre><code class="language-cpp">vector&lt;int&gt; SieveOfEuler(int n){
+    vector&lt;int&gt; ret(n + 1, 0); //约数个数
+    vector&lt;int&gt; vis(n + 1, 0); //是否访问标记
+    vector&lt;int&gt; prime; // 质数表
+    vector&lt;int&gt; num(n + 1, 0); // 最小质数因子出现次数
+    ret[1] = 1;
+    for(int i = 2; i &lt;= n; ++i){
+        if(!vis[i]){
+            vis[i] = 1;
+            prime.push_back(i);
+            ret[i] = 2;
+            num[i] = 1;
+        }
+        for(auto&amp; it: prime){
+            if(n / it &lt; i) break;
+            vis[it * i] = 1;
+            if(i % it == 0){
+                num[i * it] = num[i] + 1;
+                ret[i * it] = ret[i] / num[i * it] * (num[i * it] + 1);
+                break;
+            }else{
+                num[i * it] = 1;
+                ret[i * it] = ret[i] * 2;
+            }
+        }
+    }
+    return ret;
+}
+</code></pre>
+<h2 id="中国剩余定理--扩展中国剩余定理">中国剩余定理 &amp; 扩展中国剩余定理<a class="headerlink" href="#中国剩余定理--扩展中国剩余定理" title="Permanent link">&para;</a></h2>
+<pre><code class="language-cpp">template&lt;typename T&gt;
+T exgcd(T a, T b, T&amp; x, T&amp; y){
+    if(b == 0){
+        x = 1, y = 0;
+        return a;
+    }
+    T d = exgcd(b, a % b, y, x);
+    y -= (a / b) * x;
+    return d;
+}
+template&lt;typename T&gt;
+T mul(T b, T n, T p){
+    T ans = 0;
+    while(n){
+        if(n &amp; 1) ans = (ans + b % p) % p;
+        b = (b + b) % p;
+        n &gt;&gt;= 1;
+    }
+    return ans;
+}
+template&lt;typename T&gt;
+T crt(vector&lt;pair&lt;T, T&gt;&gt;&amp; args){
+    T M = 1, ans = 0, x, y;
+    for(auto&amp; it: args) M *= it.first;
+    for(auto&amp; it: args){
+        T b = M / it.first;
+        exgcd(it.first, b, x, y);
+        y = (y % it.first + it.first) % it.first;
+        ans = (ans + mul(mul(it.second, b, M), y, M)) % M;
+    }
+    return ans;
+}
+template&lt;typename T&gt;
+bool excrt(pair&lt;T, T&gt;&amp; res, vector&lt;pair&lt;T, T&gt;&gt;&amp; args){
+    res = args.front();
+    for(int i = 1; i &lt; args.size(); ++i){
+        T c = (args[i].second - res.second % args[i].first + args[i].first) % args[i].first;   
+        T x, y;
+        T v = exgcd(res.first, args[i].first, x, y);
+        if(c % v) return false;
+        x = mul(x, c / v, args[i].first / v);
+        res.second = (res.second + x * res.first);
+        res.first *= args[i].first / v;
+        res.second = (res.second % res.first + res.first) % res.first;
+    }
+    return true;
+}
+</code></pre>
+<h2 id="乘法逆元">乘法逆元<a class="headerlink" href="#乘法逆元" title="Permanent link">&para;</a></h2>
+<h3 id="扩展欧几里得算法">扩展欧几里得算法<a class="headerlink" href="#扩展欧几里得算法" title="Permanent link">&para;</a></h3>
+<pre><code class="language-cpp">template&lt;typename T&gt;
+T exgcd(T a, T b, T&amp; x, T&amp; y){
+    if(b == 0){
+        x = 1, y = 0;
+        return a;
+    }
+    T d = exgcd(b, a % b, y, x);
+    y -= (a / b) * x;
+    return d;
+}
+</code></pre>
+<h3 id="快速幂算法">快速幂算法<a class="headerlink" href="#快速幂算法" title="Permanent link">&para;</a></h3>
+<pre><code class="language-cpp">template&lt;typename T&gt;
+T qPow(T b, T n, T p){
+    T res = 1;
+    while(n){
+        if(n &amp; 1) res = res * b % p;
+        b = b * b % p;
+        n &gt;&gt;= 1;
+    }
+    return res;
+}
+</code></pre>
+<h3 id="批量乘法逆元">批量乘法逆元<a class="headerlink" href="#批量乘法逆元" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>MOD需要是质数</p>
+</blockquote>
+<pre><code class="language-cpp">vector&lt;int&gt; reverse(int n, int MOD){
+    std::vector&lt;int&gt; inv(n + 1, 1);
+    for (int i = 2; i &lt;= n; ++i) {
+        inv[i] = (long long) (MOD - MOD / i) * inv[MOD % i] % MOD;
+    }
+    return inv;
+}
+</code></pre>
+<h2 id="阶乘逆元求组合数">阶乘逆元（求组合数）<a class="headerlink" href="#阶乘逆元求组合数" title="Permanent link">&para;</a></h2>
+<pre><code class="language-cpp">template&lt;typename T = long long, int P = 1000000007&gt;
+class Combination{
+public:
+    Combination(int n): div(n + 1, 1), mul(n + 1, 1){
+        for(int i = 1; i &lt;= n; ++i) mul[i] = mul[i - 1] * i % P;
+        div[n] = qPow(mul[n], P - 2);
+        for(int i = n - 1; i &gt; 0; --i) div[i] = div[i + 1] * (i + 1) % P;
+    }
+    T operator () (int n, int m){
+        if(m &lt; 0) return 0;
+        if(m &gt; n) return 0;
+        return mul[n] * div[m] % P * div[n - m] % P;
+    }
+
+private:
+    T qPow(T b, T n){
+        T ret = 1;
+        while(n){
+            if(n &amp; 1) ret = ret * b % P;
+            b = b * b % P;
+            n &gt;&gt;= 1;
+        }
+        return ret;
+    }
+    vector&lt;T&gt; div, mul;
+};
+</code></pre>
+<h2 id="卢卡斯定理">卢卡斯定理<a class="headerlink" href="#卢卡斯定理" title="Permanent link">&para;</a></h2>
+<p>对于质数<span class="arithmatex">\(p\)</span>，有
+$$
+    \binom{n}{m} \bmod p = \binom{\lfloor n / p \rfloor}{\lfloor m / p \rfloor} \cdot \binom{\lfloor n \bmod p \rfloor}{\lfloor m \bmod p \rfloor} \bmod p 
+$$</p>
+<pre><code class="language-cpp">template&lt;typename T&gt;
+T lucas(T n, T m, T p, const function&lt;T(T, T)&gt;&amp; C){
+    if(m == 0) return 1;
+    T c = C(n % p, m % p);
+    T res = (c * lucas(n / p, m / p, p, C)) % p;
+    return res;
+}
+</code></pre>
+<h2 id="bsgs">BSGS<a class="headerlink" href="#bsgs" title="Permanent link">&para;</a></h2>
+<p>在<span class="arithmatex">\(a\)</span>和<span class="arithmatex">\(p\)</span>互质的情况下，求解
+$$
+    a ^ x \equiv b \bmod p
+$$</p>
+<pre><code class="language-cpp">template&lt;typename T&gt;
+T qPow(T b, T n, T p){
+    T ret = 1;
+    while(n){
+        if(n &amp; 1) ret = ret * b % p;
+        b = b * b % p;
+        n &gt;&gt;= 1;
+    }
+    return ret;
+}
+template&lt;typename T&gt;
+T BSGS(T a, T b, T p, T c = 1){
+    map&lt;T, T&gt; mp;
+    T t = (T)sqrt(p) + 1;
+    b %= p;
+    ll tmp = 1;
+    for(int i = 0; i &lt; t; ++i){
+        T tv = b * tmp % p;
+        mp[tv] = i;
+        tmp = (tmp * a) % p;
+    }
+    a = qPow(a, t, p);
+    if(a == 0) return b == 0 ? 1 : -1;
+    for(int i = 0; i &lt;= t; ++i){
+        ll tv = qPow&lt;T&gt;(a, i, p) * c % p;
+        if(mp.count(tv) and i * t - mp[tv] &gt;= 0){
+            return i * t - mp[tv];
+        }
+    }
+    return -1;
+}
+</code></pre>
+<h2 id="exbsgs">exBSGS<a class="headerlink" href="#exbsgs" title="Permanent link">&para;</a></h2>
+<p>求解
+$$
+    a ^ x \equiv b \bmod p
+$$</p>
+<pre><code class="language-cpp">template&lt;typename T&gt;
+T exgcd(T a, T b, T&amp; x, T&amp; y){
+    if(b == 0){
+        x = 1, y = 0;
+        return a;
+    }
+    T d = exgcd(b, a % b, y, x);
+    y -= (a / b) * x;
+    return d;
+}
+template&lt;typename T&gt;
+T qPow(T b, T n, T p){
+    T ret = 1;
+    while(n){
+        if(n &amp; 1) ret = ret * b % p;
+        b = b * b % p;
+        n &gt;&gt;= 1;
+    }
+    return ret;
+}
+template&lt;typename T&gt;
+T BSGS(T a, T b, T p, T c = 1){
+    map&lt;T, T&gt; mp;
+    T t = (T)sqrt(p) + 1;
+    b %= p;
+    ll tmp = 1;
+    for(int i = 0; i &lt; t; ++i){
+        T tv = b * tmp % p;
+        mp[tv] = i;
+        tmp = (tmp * a) % p;
+    }
+    a = qPow(a, t, p);
+    if(a == 0) return b == 0 ? 1 : -1;
+    for(int i = 0; i &lt;= t; ++i){
+        ll tv = qPow&lt;T&gt;(a, i, p) * c % p;
+        if(mp.count(tv) and i * t - mp[tv] &gt;= 0){
+            return i * t - mp[tv];
+        }
+    }
+    return -1;
+}
+template&lt;typename T&gt;
+T exBSGS(T a, T b, T p){
+    a %= p, b %= p;
+    if(b == 1 or p == 1) return 0;
+    T cnt = 0;
+    T d, ad = 1;
+    T na = 1;
+    while((d = gcd(a, p)) != 1){
+        if(b % d) return -1;
+        ++cnt;
+        b /= d, p /= d;
+        ad = ad * (a / d) % p;
+        if(ad == b) return cnt;
+    }
+    T tx, ty;
+    T dv = exgcd&lt;T&gt;(ad, p, tx, ty);
+    tx = (tx % p + p) % p;
+    T ans = BSGS&lt;T&gt;(a, b * tx % p, p);
+    if(ans &gt;= 0) ans += cnt;
+    return ans;
+}
+</code></pre>
+<h2 id="cayley-公式caylays-formula">Cayley 公式（Caylay's formula）<a class="headerlink" href="#cayley-公式caylays-formula" title="Permanent link">&para;</a></h2>
+<p>完全图 <span class="arithmatex">\(K_n\)</span> 有 <span class="arithmatex">\(n^{n - 2}\)</span> 棵生成树。</p>
+<h2 id="莫比乌斯函数线性筛">莫比乌斯函数（线性筛）<a class="headerlink" href="#莫比乌斯函数线性筛" title="Permanent link">&para;</a></h2>
+<pre><code class="language-cpp">template&lt;int N, typename T = int&gt;
+class Mu {
+public:
+    Mu() : muArr(N + 1), pref(N + 1) {
+        bitset&lt;N + 1&gt; notPrime;
+        muArr[1] = 1;
+        for (int i = 2; i &lt;= N; ++i) {
+            if (!notPrime[i]) {
+                prime.push_back(i);
+                muArr[i] = -1;
+            }
+            for (auto it : prime) {
+                if (N / i &gt;= it) {
+                    notPrime[it * i] = 1;
+                    if (i % it == 0) {
+                        break;
+                    } else {
+                        muArr[i * it] = -muArr[i];
+                    }
+                } else {
+                    break;
+                }
+            }
+        }
+        pref[0] = 0;
+        for (int i = 1; i &lt;= N; ++i) {
+            pref[i] = pref[i - 1] + muArr[i];
+        }
+    }
+
+    T&amp; operator[](int i) {
+        return muArr[i];
+    }
+
+    vector&lt;T&gt; pref;
+    vector&lt;T&gt; prime;
+private:
+    vector&lt;T&gt; muArr;
+};
+</code></pre>
+<h2 id="杜教筛">杜教筛<a class="headerlink" href="#杜教筛" title="Permanent link">&para;</a></h2>
+<pre><code class="language-cpp">template&lt;int N = 5000000&gt;
+struct Du{
+  Du(): vis(N + 1, 0), mu(N + 1, 0), musum(N + 1, 0) {
+    mu[1] = 1;
+    for(int i = 2; i &lt;= N; ++i){
+      if(!vis[i]){
+        pri.push_back(i);
+        mu[i] = -1;
+      }
+      for(auto&amp; it: pri){
+        if(1ll * i * it &gt; N) break;
+        vis[i * it] = 1;
+        if(i % it){
+          mu[i * it] = - mu[i];
+        }else{
+          mu[i * it] = 0;
+          break;
+        }
+      }
+    }
+    for(int i = 1; i &lt;= N; ++i) musum[i] = musum[i - 1] + mu[i];
+  }
+  long long getMuSum(int x){
+    if(x &lt;= N) return musum[x];
+    if(lazyMu.count(x)) return lazyMu[x];
+    long long ret = 1;
+    for(long long i = 2, j; i &lt;= x; i = j + 1){
+      j = x / (x / i);
+      ret -= getMuSum(x / i) * (j - i + 1);
+    }
+    return lazyMu[x] = ret;
+  }
+  long long getPhiSum(int x){
+    long long ret = 0;
+    for(long long i = 1, j; i &lt;= x; i = j + 1){
+      j = x / (x / i);
+      ret += (getMuSum(j) - getMuSum(i - 1)) * (x / i) * (x / i);
+    }
+    return (ret - 1) / 2 + 1;
+  }
+  map&lt;int, long long&gt; lazyMu;
+  vector&lt;int&gt; mu, musum, pri;
+  vector&lt;bool&gt; vis;
+};
+</code></pre>
+<h2 id="康拓展开">康拓展开<a class="headerlink" href="#康拓展开" title="Permanent link">&para;</a></h2>
+<h3 id="正向">正向<a class="headerlink" href="#正向" title="Permanent link">&para;</a></h3>
+<pre><code class="language-cpp">/**
+ * @brief 康拓展开
+ * @param t 排列，这里设定排列的长度是9
+ * @return Contar值
+ * @author dianhsu
+ **/
+int radix[] = {1, 1, 2, 6, 24, 120, 720, 5040, 40320};
+template&lt;int LEN=9&gt;
+int Contar(int* t){
+    int ret = 0;
+    for(int i = 0; i &lt; LEN; ++i){
+        int tmp = 0;
+        for(int j = i + 1; j &lt; LEN; ++j){
+            if(t[i] &gt; t[j]){
+                ++tmp;
+            }
+        }
+        ret += radix[LEN - 1 - i] * tmp;
+    }
+    return ret;
+}
+</code></pre>
+<h3 id="反向">反向<a class="headerlink" href="#反向" title="Permanent link">&para;</a></h3>
+<pre><code class="language-cpp">/**
+ * @brief 康拓展开的逆运算
+ * @param contar_val Contar 值
+ * @param t 返回的Contar序列
+ * @author dianhsu
+ * */
+int radix[] = {1, 1, 2, 6, 24, 120, 720, 5040, 40320};
+template&lt;int LEN=9&gt;
+void ReverseContar(int contar_val, int* t){
+    int vis[LEN];
+    memset(vis, 0, sizeof vis);
+    for(int i = 0; i &lt; LEN; ++i){
+        int idx = contar_val / radix[LEN - 1 - i];
+        contar_val = contar_val % radix[LEN - 1 - i];
+        for(int j = 0; j &lt; LEN; ++j){
+            if(vis[j] == 0){
+                if(idx == 0){
+                    vis[j] = 1;
+                    t[i] = j;
+                    break;
+                }else{
+                    --idx;
+                }
+            }
+        }
+    }
+}
+</code></pre>
+<h2 id="miller-rabin--pollard-rho">Miller Rabin &amp; Pollard Rho<a class="headerlink" href="#miller-rabin--pollard-rho" title="Permanent link">&para;</a></h2>
+<pre><code class="language-cpp">random_device rd;
+mt19937_64 gen(rd());
+uniform_int_distribution&lt;ll&gt; dis(0);
+
+ll qPow(ll b, ll p, ll mod){
+    ll ret = 1;
+    while(p){
+        if(p &amp; 1) ret = (__int128)ret * b % mod;
+        b = (__int128)b * b % mod;
+        p &gt;&gt;= 1;
+    }
+    return ret;
+}
+bool MillerRabin(ll p){
+    if(p &lt; 2) return false;
+    if(p &lt; 4) return true;
+    ll d = p - 1;
+    int r = 0;
+    while((d &amp; 1) == 0) ++r, d &gt;&gt;= 1;
+    for(ll k = 0; k &lt; 10; ++k){
+        ll rv = dis(gen) % (p - 2) + 2;   
+        ll x = qPow(rv, d, p);
+        if(x == 1 or x == p - 1) continue;
+        for(int i = 0; i &lt; r - 1; ++i){
+            x = (__int128) x * x % p;
+            if(x == p - 1) break;
+        }
+        if(x != p - 1) return false;
+    }
+
+    return true;
+}
+ll PollardRho(ll n){
+    ll c = rand() % (n - 1) + 1;
+    ll s = 0, t = 0;
+    for(ll goal = 1, val = 1; ; goal *= 2, s = t, val = 1){
+        for(ll step = 1; step &lt;= goal; ++step){
+            t = ((__int128) t * t + c) % n;
+            val = (__int128)val * abs(t - s) % n;
+            if(step % 127 == 0){
+                ll d = gcd(val, n);
+                if(d &gt; 1) return d;
+            }
+        }
+        ll d = gcd(val, n);
+        if(d &gt; 1) return d;
+    }
+}
+
+</code></pre>
+<h2 id="线性代数">线性代数<a class="headerlink" href="#线性代数" title="Permanent link">&para;</a></h2>
+<h3 id="矩阵">矩阵<a class="headerlink" href="#矩阵" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>矩阵模板，搭配模数可以当成矩阵快速幂。</p>
+</blockquote>
+<pre><code class="language-cpp">template&lt;typename T&gt;
+struct Matrix{
+    std::vector&lt;T&gt; data;
+    int sz;
+    // 构造全0矩阵，或者斜对角填上自定义数字
+    Matrix(int sz, T v = 0): sz(sz), data(sz * sz, 0){
+        int cur = 0;
+        do{
+            data[cur] = v;
+            cur += sz + 1;
+        }while(cur &lt; sz * sz);
+    }
+    //从vector中构造矩阵
+    Matrix(int sz, std::vector&lt;T&gt;&amp; arg): sz(sz), data(sz * sz, 0){
+        assert(arg.size() &gt;= sz * sz);
+        for(int i = 0; i &lt; sz * sz; ++i) data[i] = arg[i];
+    }
+    //从vector中构造矩阵，右值
+    Matrix(int sz, std::vector&lt;T&gt;&amp;&amp; arg): sz(sz), data(sz * sz, 0){
+        assert(arg.size() &gt;= sz * sz);
+        for(int i = 0; i &lt; sz * sz; ++i) data[i] = arg[i];
+    }
+    Matrix operator + (const Matrix&amp; arg) const {
+        assert(sz == arg.sz);
+        Matrix ret(sz);
+        for(int i = 0; i &lt; sz * sz; ++i){
+            ret.data[i] = data[i] + arg.data[i];
+        }
+        return ret;
+    }
+    Matrix operator * (const Matrix&amp; arg) const {
+        assert(sz == arg.sz);
+        Matrix ret(sz);
+        for(int i = 0; i &lt; sz; ++i){
+            for(int j = 0; j &lt; sz; ++j){
+                for(int k = 0; k &lt; sz; ++k){
+                    ret.data[i * sz + j] += data[i * sz + k] * arg.data[k * sz + j];
+                }
+            }
+        }
+        return ret;
+    }
+    Matrix operator - (const Matrix&amp; arg) const {
+        assert(sz == arg.sz);
+        Matrix ret(sz);
+        for(int i = 0; i &lt; sz * sz; ++i) ret.data[i] = data[i] - arg.data[i];
+        return ret;
+    }
+    friend std::ostream &amp; operator &lt;&lt; (std::ostream&amp; ots, const Matrix&amp; arg){
+        for(int i = 0; i &lt; arg.sz; ++i){
+            for(int j = 0; j &lt; arg.sz; ++j){
+                if(j) ots &lt;&lt; &quot; &quot;;
+                ots &lt;&lt; arg.data[i * arg.sz + j];
+            }
+            if(i + 1 != arg.sz) ots &lt;&lt; &quot;\n&quot;;
+        }
+        return ots;
+    }
+};
+</code></pre>
+<h3 id="高斯消元">高斯消元<a class="headerlink" href="#高斯消元" title="Permanent link">&para;</a></h3>
+<pre><code class="language-cpp">template&lt;typename T&gt;
+struct Gauss{
+    Gauss(int argR, int argC): r(argR), c(argC), mat(r, vector&lt;T&gt;(c, 0)), idx(r, 0){
+        assert(argC &gt;= argR);
+        iota(idx.begin(), idx.end(), 0);
+    }
+    T&amp; operator () (int row, int col){
+        return mat[row][col];
+    }
+    int r, c;
+    friend istream&amp; operator &gt;&gt; (istream&amp; its, Gauss&amp; arg){
+        for(int i = 0; i &lt; arg.r; ++i){
+            for(int j = 0; j &lt; arg.c; ++j){
+                its &gt;&gt; arg(i, j);
+            }
+        }
+        return its;
+    }
+    friend ostream&amp; operator &lt;&lt; (ostream&amp; ots, Gauss&amp; arg){
+        for(int i = 0; i &lt; arg.r; ++i){
+            for(int j = 0; j &lt; arg.c; ++j){
+                ots &lt;&lt; arg(arg.idx[i], j);
+                if(j + 1 != arg.c) ots &lt;&lt; &quot; &quot;;
+            }
+            if(i + 1 != arg.r) ots &lt;&lt; &quot;\n&quot;;
+        }
+        return ots;
+    }
+    vector&lt;vector&lt;T&gt;&gt; mat;
+    vector&lt;int&gt; idx;
+    bool elimination(const function&lt;bool(T)&gt;&amp; isZero, const function&lt;T(T)&gt;&amp; inv){
+        for(int i = 0; i &lt; r; ++i){
+            int cur = i;
+            for(int j = i + 1; j &lt; r; ++j){
+                if(abs(mat[idx[j]][i]) &gt; abs(mat[idx[cur]][i])){
+                    cur = j;
+                }
+            }
+            swap(idx[i], idx[cur]);
+            if(isZero(mat[idx[i]][i])) return false;
+            T mul = inv(mat[idx[i]][i]);
+            for(int j = i; j &lt; c; ++j){
+                mat[idx[i]][j] *= mul;
+            }
+            for(int i1 = 0; i1 &lt; r; ++i1){
+                if(i1 == i) continue;
+                T cmul = mat[idx[i1]][i];
+                for(int j = i; j &lt; c; ++j){
+                    mat[idx[i1]][j] -= mat[idx[i]][j] * cmul;
+                }
+            }
+        }
+        return true;
+    }
+};
+</code></pre>
+<h3 id="线性基">线性基<a class="headerlink" href="#线性基" title="Permanent link">&para;</a></h3>
+<pre><code class="language-cpp">struct LBase{
+  vector&lt;long long&gt; _data;
+  LBase(): _data(64, 0){}
+  bool insert(long long x){
+    for(int i = 63 - __builtin_clzll(x); i &gt;= 0; --i){
+      if((x &gt;&gt; i) &amp; 1){
+        if(_data[i]) x ^= _data[i];
+        else{
+          _data[i] = x;
+          break;
+        }
+      }
+    }
+    return x &gt; 0;
+  }
+  LBase&amp; operator += (const LBase&amp; arg){
+    for(auto ptr = arg._data.rbegin(); ptr != arg._data.rend(); ++ptr){
+      this-&gt;insert(*ptr);
+    }
+    return *this;
+  }
+  long long query(){
+    long long ret = 0;
+    for(auto ptr = _data.rbegin(); ptr != _data.rend(); ++ptr){
+      if(*ptr){
+        if((ret ^ (*ptr)) &gt; ret) ret ^= *ptr;
+      }
+    }
+    return ret;
+  }
+  int count(){
+    int ret = 0;
+    for(auto&amp; it: _data) if(it) ++ret;
+    return ret;
+  }
+};
+</code></pre>
+<h2 id="自适应辛普森">自适应辛普森<a class="headerlink" href="#自适应辛普森" title="Permanent link">&para;</a></h2>
+<pre><code class="language-cpp">template&lt;typename T&gt;
+T simpson(T l, T r, const function&lt;T(T)&gt;&amp; f){
+  T mid = (l + r) / 2;
+  return (r - l) * (f(l) + 4 * f(mid) + f(r)) / 6;
+}
+
+template&lt;typename T&gt;
+T asr(T l, T r, T delta, T ans, int step, const function&lt;T(T)&gt;&amp; f){
+  T mid = (l + r) / 2;
+  T fl = simpson&lt;T&gt;(l, mid, f), fr = simpson&lt;T&gt;(mid, r, f);
+  if(abs(fl + fr - ans) &lt;= 15 * delta and step &lt; 0){
+    return fl + fr + (fl + fr - ans) / 15;
+  }
+  return asr(l, mid, delta / 2, fl, step - 1, f) + asr(mid, r, delta / 2, fr, step - 1, f);
+}
+template&lt;typename T = double&gt;
+T adaptiveSimpson(T l, T r, T delta, const function&lt;T(T)&gt;&amp; f){
+  return asr&lt;T&gt;(l, r, delta, simpson&lt;T&gt;(l, r, f), 12, f);
+}
+</code></pre>
+<h2 id="多项式">多项式<a class="headerlink" href="#多项式" title="Permanent link">&para;</a></h2>
+<h3 id="快速傅立叶变换">快速傅立叶变换<a class="headerlink" href="#快速傅立叶变换" title="Permanent link">&para;</a></h3>
+<pre><code class="language-cpp">template&lt;typename T&gt;
+void butterflyDiagram(vector&lt;complex&lt;T&gt;&gt;&amp; vec){
+    assert(__builtin_popcount(vec.size()) == 1);
+    vector&lt;int&gt; rev(vec.size());
+    for(int i = 0; i &lt; vec.size(); ++i){
+        rev[i] = rev[i &gt;&gt; 1] &gt;&gt; 1;
+        if(i &amp; 1){
+            rev[i] |= (vec.size() &gt;&gt; 1);
+        }
+    }
+    for(int i = 0; i &lt; vec.size(); ++i){
+        if(i &lt; rev[i]){
+            swap(vec[i], vec[rev[i]]);
+        }
+    }
+}
+// on == 1 时是 DFT，on == -1 时是 IDFT
+template&lt;typename T&gt;
+void fft(vector&lt;complex&lt;T&gt;&gt;&amp; vec, int on){
+    assert(__builtin_popcount(vec.size()) == 1);
+    butterflyDiagram(vec);
+    for(int h = 1; h &lt; vec.size(); h &lt;&lt;= 1){
+        complex&lt;T&gt; wn(cos(M_PI / h), sin(on * M_PI / h));
+        for(int j = 0; j &lt; vec.size(); j += h * 2){
+            complex&lt;T&gt; w(1, 0);
+            for(int k = j; k &lt; j + h; ++k){
+                assert(k &lt; vec.size() and h + k &lt; vec.size());
+                auto u = vec[k];
+                auto t = w * vec[k + h];
+                vec[k] = u + t;
+                vec[k + h] = u - t;
+                w *= wn;
+            }
+        }
+    }
+    if(on == -1){
+        for(auto&amp; it: vec){
+            it.real(it.real() / vec.size());
+        }
+    }
+}
+</code></pre>
+
+
+
+
+
+<h2 id="__comments">评论</h2>
+<!-- Insert generated snippet here -->
+<script src="https://giscus.app/client.js" data-repo="dianhsu/wiki" data-repo-id="R_kgDOIiWxEg" data-category="General"
+    data-category-id="DIC_kwDOIiWxEs4CU4ha" data-mapping="title" data-strict="0" data-reactions-enabled="1"
+    data-emit-metadata="0" data-input-position="bottom" data-theme="preferred_color_scheme" data-lang="zh-CN"
+    crossorigin="anonymous" async>
+    </script>
+
+<!-- Synchronize Giscus theme with palette -->
+<script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    /* Set palette on initial load */
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+        var theme = palette.color.scheme === "slate" ? "dark" : "light"
+        giscus.setAttribute("data-theme", theme)
+    }
+
+    /* Register event handlers after documented loaded */
+    document.addEventListener("DOMContentLoaded", function () {
+        var ref = document.querySelector("[data-md-component=palette]")
+        ref.addEventListener("change", function () {
+            var palette = __md_get("__palette")
+            if (palette && typeof palette.color === "object") {
+                var theme = palette.color.scheme === "slate" ? "dark" : "light"
+
+                /* Instruct Giscus to change theme */
+                var frame = document.querySelector(".giscus-frame")
+                frame.contentWindow.postMessage(
+                    { giscus: { setConfig: { theme } } },
+                    "https://giscus.app"
+                )
+            }
+        })
+    })
+</script>
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.efa0ade1.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="../javascripts/highlight.js"></script>
+      
+    
+  </body>
+</html>

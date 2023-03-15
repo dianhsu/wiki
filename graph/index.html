@@ -1,0 +1,1116 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://dianhsu.github.io/wiki/graph/">
+      
+      
+        <link rel="prev" href="../game/">
+      
+      
+        <link rel="next" href="../geometry/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.3">
+    
+    
+      
+        <title>图论 - dianhsu's wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.c4a75a56.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#图论" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="dianhsu&#39;s wiki" class="md-header__button md-logo" aria-label="dianhsu's wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            dianhsu's wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              图论
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href=".." class="md-tabs__link">
+      首页
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../math/" class="md-tabs__link">
+        数学
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../string/" class="md-tabs__link">
+      字符串
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../game/" class="md-tabs__link">
+      游戏
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  <li class="md-tabs__item">
+    <a href="./" class="md-tabs__link md-tabs__link--active">
+      图论
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../geometry/" class="md-tabs__link">
+      计算几何
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../data_structure/" class="md-tabs__link">
+      数据结构
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../miscellaneous/" class="md-tabs__link">
+      杂项
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="dianhsu&#39;s wiki" class="md-nav__button md-logo" aria-label="dianhsu's wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    dianhsu's wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        首页
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          数学
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          数学
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../math/" class="md-nav__link">
+        首页
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../string/" class="md-nav__link">
+        字符串
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../game/" class="md-nav__link">
+        游戏
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          图论
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        图论
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#图论" class="md-nav__link">
+    图论
+  </a>
+  
+    <nav class="md-nav" aria-label="图论">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#并查集dsu" class="md-nav__link">
+    并查集（DSU）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#网络流" class="md-nav__link">
+    网络流
+  </a>
+  
+    <nav class="md-nav" aria-label="网络流">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#最大流dinic" class="md-nav__link">
+    最大流(Dinic)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#最小费用流dinic" class="md-nav__link">
+    最小费用流(Dinic)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarjan" class="md-nav__link">
+    Tarjan
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../geometry/" class="md-nav__link">
+        计算几何
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data_structure/" class="md-nav__link">
+        数据结构
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../miscellaneous/" class="md-nav__link">
+        杂项
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#图论" class="md-nav__link">
+    图论
+  </a>
+  
+    <nav class="md-nav" aria-label="图论">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#并查集dsu" class="md-nav__link">
+    并查集（DSU）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#网络流" class="md-nav__link">
+    网络流
+  </a>
+  
+    <nav class="md-nav" aria-label="网络流">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#最大流dinic" class="md-nav__link">
+    最大流(Dinic)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#最小费用流dinic" class="md-nav__link">
+    最小费用流(Dinic)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tarjan" class="md-nav__link">
+    Tarjan
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>图论</h1>
+
+<h2 id="图论">图论<a class="headerlink" href="#图论" title="Permanent link">&para;</a></h2>
+<h3 id="并查集dsu">并查集（DSU）<a class="headerlink" href="#并查集dsu" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>能Copy的时候，就不用手搓了</p>
+</blockquote>
+<pre><code class="language-cpp">class DSU{
+public:
+    explicit DSU(int size_): sz(size_), fa(size_, 0), cnt(size_, 1) {
+        iota(fa.begin(), fa.end(), 0);
+    }
+    int tf(int x){
+        return x == fa[x] ? x : fa[x] = tf(fa[x]);
+    }
+    bool mg(int x, int y){
+        int tx = tf(x), ty = tf(y);
+        if(tx != ty){
+            if(cnt[tx] &gt;= cnt[ty]){ // 启发式合并
+                fa[ty] = tx;
+                cnt[tx] += cnt[ty];
+            }else{
+                fa[tx] = ty;
+                cnt[ty] += cnt[tx];
+            }
+            return true;
+        }
+        return false;
+    }
+    pair&lt;int, int&gt; operator [] (const int idx) {
+        return {tf(idx), cnt[tf(idx)]};
+    }
+    int size(){
+        return sz;
+    }
+private:
+    int sz;
+    vector&lt;int&gt; fa, cnt;
+};
+
+</code></pre>
+<h3 id="网络流">网络流<a class="headerlink" href="#网络流" title="Permanent link">&para;</a></h3>
+<h4 id="最大流dinic">最大流(Dinic)<a class="headerlink" href="#最大流dinic" title="Permanent link">&para;</a></h4>
+<pre><code class="language-cpp">template&lt;typename cap_t&gt;
+class Dinic{
+public:
+    explicit Dinic(int n): node_cnt(n), g(n){}
+    int add_edge(int from, int to, cap_t cap){
+        int m = int(pos.size());
+        pos.emplace_back(from, int(g[from].size()));
+        int from_id = int(g[from].size());
+        int to_id = int(g[to].size());
+        if(from == to) to_id++;
+        g[from].push_back(PrivateEdge{to, to_id, cap});
+        g[to].push_back(PrivateEdge{from, from_id, 0});
+        return m;
+    }
+    struct Edge{
+        int from, to;
+        cap_t cap, flow;
+    };
+    Edge getEdge(int idx){
+        auto _e = g[pos[idx].first][pos[idx].second];
+        auto _re = g[_e.to][_e.rev];
+        return Edge{pos[idx].first, _e.to, _e.cap + _re.cap, _re.cap};
+    }
+    std::vector&lt;Edge&gt; getEdges(){
+        std::vector&lt;Edge&gt; result;
+        for(int i = 0; i &lt; pos.size(); ++i){
+            result.push_back(getEdge(i));
+        }
+        return result;
+    }
+    cap_t flow(int st, int ed){
+        return flow(st, ed, std::numeric_limits&lt;cap_t&gt;::max());
+    }
+    cap_t flow(int st, int ed, cap_t flow_limit){
+        std::vector&lt;int&gt; level(node_cnt);
+        std::queue&lt;int&gt; que;
+        auto&amp;&amp; bfs = [&amp;](){
+            std::fill(level.begin(), level.end(), -1);
+            level[st] = 0;
+            while(!que.empty()){
+                que.pop();
+            }
+            que.push(st);
+            while(!que.empty()){
+                int v = que.front();
+                que.pop();
+                for(PrivateEdge&amp; e: g[v]){
+                    if(e.cap == 0 or level[e.to] &gt;= 0) continue;
+                    level[e.to] = level[v] + 1;
+                    if(e.to == ed) continue;
+                    que.push(e.to);
+                }
+            }
+        };
+        auto&amp;&amp; dfs = [&amp;](auto&amp;&amp; self, int v, cap_t up){
+            if(v == st) return up;
+            cap_t res = 0;
+            int level_v = level[v];
+            for(int idx = 0; idx &lt; int(g[v].size()); ++idx){
+                PrivateEdge&amp; edge = g[v][idx];
+                if(level_v &lt;= level[edge.to] or g[edge.to][edge.rev].cap == 0) continue;
+                cap_t delta = self(self, edge.to, std::min(up - res, g[edge.to][edge.rev].cap));
+                if(delta &lt;= 0) continue;
+                g[v][idx].cap += delta;
+                g[edge.to][edge.rev].cap -= delta;
+                res += delta;
+                if(res == up) return res;
+            }
+            level[v] = node_cnt;
+            return res;
+        };
+        cap_t ans = 0;
+        while (ans &lt; flow_limit){
+            bfs();
+            if(level[ed] == -1) break;
+            cap_t delta = dfs(dfs, ed, flow_limit - ans);
+            if(!delta) break;
+            ans += delta;
+        }
+        return ans;
+    }
+private:
+    struct PrivateEdge{
+        int to, rev;
+        cap_t cap;
+    };
+    int node_cnt;
+    std::vector&lt;std::pair&lt;int, int&gt;&gt; pos;
+    std::vector&lt;std::vector&lt;PrivateEdge&gt;&gt; g;
+};
+</code></pre>
+<h4 id="最小费用流dinic">最小费用流(Dinic)<a class="headerlink" href="#最小费用流dinic" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>Atcoder</p>
+</blockquote>
+<pre><code class="language-cpp">template &lt;class Cap, class Cost&gt; struct mcf_graph {
+public:
+    mcf_graph() {}
+    explicit mcf_graph(int n) : _n(n) {}
+
+    int add_edge(int from, int to, Cap cap, Cost cost) {
+        assert(0 &lt;= from &amp;&amp; from &lt; _n);
+        assert(0 &lt;= to &amp;&amp; to &lt; _n);
+        assert(0 &lt;= cap);
+        assert(0 &lt;= cost);
+        int m = int(_edges.size());
+        _edges.push_back({from, to, cap, 0, cost});
+        return m;
+    }
+
+    struct edge {
+        int from, to;
+        Cap cap, flow;
+        Cost cost;
+    };
+
+    template &lt;class E&gt; struct csr {
+        std::vector&lt;int&gt; start;
+        std::vector&lt;E&gt; elist;
+        explicit csr(int n, const std::vector&lt;std::pair&lt;int, E&gt;&gt;&amp; edges)
+            : start(n + 1), elist(edges.size()) {
+            for (auto e : edges) {
+                start[e.first + 1]++;
+            }
+            for (int i = 1; i &lt;= n; i++) {
+                start[i] += start[i - 1];
+            }
+            auto counter = start;
+            for (auto e : edges) {
+                elist[counter[e.first]++] = e.second;
+            }
+        }
+    };
+
+    edge get_edge(int i) {
+        int m = int(_edges.size());
+        assert(0 &lt;= i &amp;&amp; i &lt; m);
+        return _edges[i];
+    }
+    std::vector&lt;edge&gt; edges() { return _edges; }
+
+    std::pair&lt;Cap, Cost&gt; flow(int s, int t) {
+        return flow(s, t, std::numeric_limits&lt;Cap&gt;::max());
+    }
+    std::pair&lt;Cap, Cost&gt; flow(int s, int t, Cap flow_limit) {
+        return slope(s, t, flow_limit).back();
+    }
+    std::vector&lt;std::pair&lt;Cap, Cost&gt;&gt; slope(int s, int t) {
+        return slope(s, t, std::numeric_limits&lt;Cap&gt;::max());
+    }
+    std::vector&lt;std::pair&lt;Cap, Cost&gt;&gt; slope(int s, int t, Cap flow_limit) {
+        assert(0 &lt;= s &amp;&amp; s &lt; _n);
+        assert(0 &lt;= t &amp;&amp; t &lt; _n);
+        assert(s != t);
+
+        int m = int(_edges.size());
+        std::vector&lt;int&gt; edge_idx(m);
+
+        auto g = [&amp;]() {
+            std::vector&lt;int&gt; degree(_n), redge_idx(m);
+            std::vector&lt;std::pair&lt;int, _edge&gt;&gt; elist;
+            elist.reserve(2 * m);
+            for (int i = 0; i &lt; m; i++) {
+                auto e = _edges[i];
+                edge_idx[i] = degree[e.from]++;
+                redge_idx[i] = degree[e.to]++;
+                elist.push_back({e.from, {e.to, -1, e.cap - e.flow, e.cost}});
+                elist.push_back({e.to, {e.from, -1, e.flow, -e.cost}});
+            }
+            auto _g = csr&lt;_edge&gt;(_n, elist);
+            for (int i = 0; i &lt; m; i++) {
+                auto e = _edges[i];
+                edge_idx[i] += _g.start[e.from];
+                redge_idx[i] += _g.start[e.to];
+                _g.elist[edge_idx[i]].rev = redge_idx[i];
+                _g.elist[redge_idx[i]].rev = edge_idx[i];
+            }
+            return _g;
+        }();
+
+        auto result = slope(g, s, t, flow_limit);
+
+        for (int i = 0; i &lt; m; i++) {
+            auto e = g.elist[edge_idx[i]];
+            _edges[i].flow = _edges[i].cap - e.cap;
+        }
+
+        return result;
+    }
+
+private:
+    int _n;
+    std::vector&lt;edge&gt; _edges;
+
+    // inside edge
+    struct _edge {
+        int to, rev;
+        Cap cap;
+        Cost cost;
+    };
+
+    std::vector&lt;std::pair&lt;Cap, Cost&gt;&gt; slope(csr&lt;_edge&gt;&amp; g,
+        int s,
+        int t,
+        Cap flow_limit) {
+        // variants (C = maxcost):
+        // -(n-1)C &lt;= dual[s] &lt;= dual[i] &lt;= dual[t] = 0
+        // reduced cost (= e.cost + dual[e.from] - dual[e.to]) &gt;= 0 for all edge
+
+        // dual_dist[i] = (dual[i], dist[i])
+        std::vector&lt;std::pair&lt;Cost, Cost&gt;&gt; dual_dist(_n);
+        std::vector&lt;int&gt; prev_e(_n);
+        std::vector&lt;bool&gt; vis(_n);
+        struct Q {
+            Cost key;
+            int to;
+            bool operator&lt;(Q r) const { return key &gt; r.key; }
+        };
+        std::vector&lt;int&gt; que_min;
+        std::vector&lt;Q&gt; que;
+        auto dual_ref = [&amp;]() {
+            for (int i = 0; i &lt; _n; i++) {
+                dual_dist[i].second = std::numeric_limits&lt;Cost&gt;::max();
+            }
+            std::fill(vis.begin(), vis.end(), false);
+            que_min.clear();
+            que.clear();
+
+            // que[0..heap_r) was heapified
+            size_t heap_r = 0;
+
+            dual_dist[s].second = 0;
+            que_min.push_back(s);
+            while (!que_min.empty() || !que.empty()) {
+                int v;
+                if (!que_min.empty()) {
+                    v = que_min.back();
+                    que_min.pop_back();
+                } else {
+                    while (heap_r &lt; que.size()) {
+                        heap_r++;
+                        std::push_heap(que.begin(), que.begin() + heap_r);
+                    }
+                    v = que.front().to;
+                    std::pop_heap(que.begin(), que.end());
+                    que.pop_back();
+                    heap_r--;
+                }
+                if (vis[v]) continue;
+                vis[v] = true;
+                if (v == t) break;
+                // dist[v] = shortest(s, v) + dual[s] - dual[v]
+                // dist[v] &gt;= 0 (all reduced cost are positive)
+                // dist[v] &lt;= (n-1)C
+                Cost dual_v = dual_dist[v].first, dist_v = dual_dist[v].second;
+                for (int i = g.start[v]; i &lt; g.start[v + 1]; i++) {
+                    auto e = g.elist[i];
+                    if (!e.cap) continue;
+                    // |-dual[e.to] + dual[v]| &lt;= (n-1)C
+                    // cost &lt;= C - -(n-1)C + 0 = nC
+                    Cost cost = e.cost - dual_dist[e.to].first + dual_v;
+                    if (dual_dist[e.to].second - dist_v &gt; cost) {
+                        Cost dist_to = dist_v + cost;
+                        dual_dist[e.to].second = dist_to;
+                        prev_e[e.to] = e.rev;
+                        if (dist_to == dist_v) {
+                            que_min.push_back(e.to);
+                        } else {
+                            que.push_back(Q{dist_to, e.to});
+                        }
+                    }
+                }
+            }
+            if (!vis[t]) {
+                return false;
+            }
+
+            for (int v = 0; v &lt; _n; v++) {
+                if (!vis[v]) continue;
+                // dual[v] = dual[v] - dist[t] + dist[v]
+                //         = dual[v] - (shortest(s, t) + dual[s] - dual[t]) +
+                //         (shortest(s, v) + dual[s] - dual[v]) = - shortest(s,
+                //         t) + dual[t] + shortest(s, v) = shortest(s, v) -
+                //         shortest(s, t) &gt;= 0 - (n-1)C
+                dual_dist[v].first -= dual_dist[t].second - dual_dist[v].second;
+            }
+            return true;
+        };
+        Cap flow = 0;
+        Cost cost = 0, prev_cost_per_flow = -1;
+        std::vector&lt;std::pair&lt;Cap, Cost&gt;&gt; result = {{Cap(0), Cost(0)}};
+        while (flow &lt; flow_limit) {
+            if (!dual_ref()) break;
+            Cap c = flow_limit - flow;
+            for (int v = t; v != s; v = g.elist[prev_e[v]].to) {
+                c = std::min(c, g.elist[g.elist[prev_e[v]].rev].cap);
+            }
+            for (int v = t; v != s; v = g.elist[prev_e[v]].to) {
+                auto&amp; e = g.elist[prev_e[v]];
+                e.cap += c;
+                g.elist[e.rev].cap -= c;
+            }
+            Cost d = -dual_dist[s].first;
+            flow += c;
+            cost += c * d;
+            if (prev_cost_per_flow == d) {
+                result.pop_back();
+            }
+            result.push_back({flow, cost});
+            prev_cost_per_flow = d;
+        }
+        return result;
+    }
+};
+</code></pre>
+<h3 id="tarjan">Tarjan<a class="headerlink" href="#tarjan" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>解决关键边和关键点很好用</p>
+</blockquote>
+<pre><code class="language-cpp">const int maxn = 100100;
+int dfn[maxn], low[maxn];
+int tim;
+int vis[maxn];
+int sd[maxn];
+std::stack&lt;int&gt; st;
+vector&lt;vector&lt;int&gt;&gt; g;
+void tarjan(int cur){
+    dfn[cur] = low[cur] = ++tim; 
+    vis[cur] = 1;
+    st.push(cur);
+    for(auto&amp; nex: g[cur]){
+        if(!dfn[nex]){
+            tarjan(nex);
+            low[cur] = min(low[cur], low[nex]);
+        }else if(vis[nex]){
+            low[cur] = min(low[cur], dfn[nex]);
+        }
+    }
+    if(dfn[cur] == low[cur]){
+        while(!st.empty()){
+            auto pos = st.top();
+            st.pop();
+            vis[pos] = 0;
+            sd[pos] = cur;
+            if(pos == cur) break;
+        }
+    }
+}
+
+</code></pre>
+
+
+
+
+
+<h2 id="__comments">评论</h2>
+<!-- Insert generated snippet here -->
+<script src="https://giscus.app/client.js" data-repo="dianhsu/wiki" data-repo-id="R_kgDOIiWxEg" data-category="General"
+    data-category-id="DIC_kwDOIiWxEs4CU4ha" data-mapping="title" data-strict="0" data-reactions-enabled="1"
+    data-emit-metadata="0" data-input-position="bottom" data-theme="preferred_color_scheme" data-lang="zh-CN"
+    crossorigin="anonymous" async>
+    </script>
+
+<!-- Synchronize Giscus theme with palette -->
+<script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    /* Set palette on initial load */
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+        var theme = palette.color.scheme === "slate" ? "dark" : "light"
+        giscus.setAttribute("data-theme", theme)
+    }
+
+    /* Register event handlers after documented loaded */
+    document.addEventListener("DOMContentLoaded", function () {
+        var ref = document.querySelector("[data-md-component=palette]")
+        ref.addEventListener("change", function () {
+            var palette = __md_get("__palette")
+            if (palette && typeof palette.color === "object") {
+                var theme = palette.color.scheme === "slate" ? "dark" : "light"
+
+                /* Instruct Giscus to change theme */
+                var frame = document.querySelector(".giscus-frame")
+                frame.contentWindow.postMessage(
+                    { giscus: { setConfig: { theme } } },
+                    "https://giscus.app"
+                )
+            }
+        })
+    })
+</script>
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.efa0ade1.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+      
+        <script src="../javascripts/highlight.js"></script>
+      
+    
+  </body>
+</html>
