@@ -1087,96 +1087,106 @@
   <h1>首页</h1>
 
 <h2 id="模数int">模数(int)<a class="headerlink" href="#模数int" title="Permanent link">&para;</a></h2>
-<pre><code class="language-cpp">class MInt{
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+
+template&lt;int P&gt;
+class MI{
 public:
     static int selfPow(int base, int p){
         int ret = 1;
         while(p){
-            if(p &amp; 1) ret = (ret * 1ll * base) % MOD;
+            if(p &amp; 1) ret = (ret * 1ll * base) % P;
             p &gt;&gt;= 1;
-            base = (base * 1ll * base) % MOD;
+            base = (base * 1ll * base) % P;
         }
         return ret;
     }
-    MInt(): val(0) {}
-    MInt(int tv): val(tv) {}
-    MInt operator + (const MInt&amp; arg) const { return MInt((val * 1ll + arg.val) % MOD); }
-    MInt operator - (const MInt&amp; arg) const { return MInt((val * 1ll + MOD - arg.val) % MOD); }
-    MInt operator * (const MInt&amp; arg) const { return MInt((val * 1ll * arg.val) % MOD); }
-    MInt operator / (const MInt&amp; arg) const { return MInt((val * 1ll * selfPow(arg.val, MOD - 2)) % MOD); }
-    MInt operator + (const int argv) const { return MInt((val * 1ll + argv) % MOD); }
-    MInt operator - (const int argv) const { return MInt((val * 1ll + MOD - argv) % MOD); }
-    MInt operator * (const int argv) const { return MInt((val * 1ll * argv) % MOD); }
-    MInt operator / (const int argv) const { return MInt((val * 1ll * selfPow(argv, MOD - 2)) % MOD); }
-    MInt&amp; operator += (const MInt&amp; arg){
-        this-&gt;val = (this-&gt;val * 1ll + arg.val) % MOD;
+    MI(): _val(0) {}
+    MI(int tv): _val(tv) {}
+    MI operator + (const MI&amp; arg) const { return MI((_val * 1ll + arg._val) % P); }
+    MI operator - (const MI&amp; arg) const { return MI((_val * 1ll + P - arg._val) % P); }
+    MI operator * (const MI&amp; arg) const { return MI((_val * 1ll * arg._val) % P); }
+    MI operator / (const MI&amp; arg) const { return MI((_val * 1ll * selfPow(arg._val, P - 2)) % P); }
+    MI operator + (const int argv) const { return MI((_val * 1ll + argv) % P); }
+    MI operator - (const int argv) const { return MI((_val * 1ll + P - argv) % P); }
+    MI operator * (const int argv) const { return MI((_val * 1ll * argv) % P); }
+    MI operator / (const int argv) const { return MI((_val * 1ll * selfPow(argv, P - 2)) % P); }
+    MI&amp; operator += (const MI&amp; arg){
+        this-&gt;_val = (this-&gt;_val * 1ll + arg._val) % P;
         return *this;
     }
-    MInt&amp; operator -= (const MInt&amp; arg){
-        this-&gt;val = (this-&gt;val * 1ll + MOD - arg.val) % MOD;
+    MI&amp; operator -= (const MI&amp; arg){
+        this-&gt;_val = (this-&gt;_val * 1ll + P - arg._val) % P;
         return *this;
     }
-    MInt&amp; operator *= (const MInt&amp; arg){
-        this-&gt;val = (this-&gt;val * 1ll * arg.val) % MOD;
+    MI&amp; operator *= (const MI&amp; arg){
+        this-&gt;_val = (this-&gt;_val * 1ll * arg._val) % P;
         return *this;
     }
-    MInt&amp; operator /= (const MInt&amp; arg){
-        this-&gt;val = (this-&gt;val * 1ll * selfPow(arg.val, MOD - 2)) % MOD;
+    MI&amp; operator /= (const MI&amp; arg){
+        this-&gt;_val = (this-&gt;_val * 1ll * selfPow(arg._val, P - 2)) % P;
         return *this;
     }
-    MInt&amp; operator += (const int argv){
-        this-&gt;val = (this-&gt;val * 1ll + argv) % MOD;
+    MI&amp; operator += (const int argv){
+        this-&gt;_val = (this-&gt;_val * 1ll + argv) % P;
         return *this;
     }
-    MInt&amp; operator -= (const int argv){
-        this-&gt;val = (this-&gt;val * 1ll + MOD - argv) % MOD;
+    MI&amp; operator -= (const int argv){
+        this-&gt;_val = (this-&gt;_val * 1ll + P - argv) % P;
         return *this;
     }
-    MInt&amp; operator *= (const int argv){
-        this-&gt;val = (this-&gt;val * 1ll * argv) % MOD;
+    MI&amp; operator *= (const int argv){
+        this-&gt;_val = (this-&gt;_val * 1ll * argv) % P;
         return *this;
     }
-    MInt&amp; operator /= (const int argv){
-        this-&gt;val = (this-&gt;val * 1ll * selfPow(argv, MOD - 2)) % MOD;
+    MI&amp; operator /= (const int argv){
+        this-&gt;_val = (this-&gt;_val * 1ll * selfPow(argv, P - 2)) % P;
         return *this;
     }
-    MInt&amp; operator = (const MInt&amp; arg){
-        this-&gt;val = arg.val % MOD;
+    MI&amp; operator %= (const int argv){
+        this-&gt;_val %= argv;
+    }
+    MI&amp; operator = (const MI&amp; arg){
+        this-&gt;_val = arg._val % P;
         return *this;
     }
-    MInt&amp; operator = (const int argv){
-        this-&gt;val = argv % MOD;
+    MI&amp; operator = (const int argv){
+        this-&gt;_val = argv % P;
         return *this;
+    }
+    bool operator != (const int argv) const {
+        return _val != argv;
     }
     bool operator == (const int argv) const{
-        return val == argv;
+        return _val == argv;
     }
 
-    friend MInt operator + (const int argv, const MInt&amp; arg){
-        return MInt((arg.val * 1ll + argv) % MOD);
+    friend MI operator + (const int argv, const MI&amp; arg){
+        return MI((arg._val * 1ll + argv) % P);
     }
-    friend MInt operator - (const int argv, const MInt&amp; arg){
-        return MInt((argv * 1ll + MOD - arg.val) % MOD);
+    friend MI operator - (const int argv, const MI&amp; arg){
+        return MI((argv * 1ll + P - arg._val) % P);
     }
-    friend MInt operator * (const int argv, const MInt&amp; arg){
-        return MInt((arg.val * 1ll * argv) % MOD);
+    friend MI operator * (const int argv, const MI&amp; arg){
+        return MI((arg._val * 1ll * argv) % P);
     }
-    friend MInt operator / (const int argv, const MInt&amp; arg){
-        return MInt((argv * 1ll * MInt::selfPow(arg.val, MOD - 2))% MOD);
+    friend MI operator / (const int argv, const MI&amp; arg){
+        return MI((argv * 1ll * MI::selfPow(arg._val, P - 2)) % P);
     }
-    friend istream&amp; operator &gt;&gt; (istream&amp; its, MInt&amp; arg){
-        its &gt;&gt; arg.val;
+
+    friend std::istream&amp; operator &gt;&gt; (std::istream&amp; its, MI&amp; arg){
+        its &gt;&gt; arg._val;
         return its;
     }
-    friend ostream&amp; operator &lt;&lt; (ostream&amp; ots, const MInt&amp; arg){
-        ots &lt;&lt; arg.val;
+    friend std::ostream&amp; operator &lt;&lt; (std::ostream&amp; ots, const MI&amp; arg){
+        ots &lt;&lt; arg._val;
         return ots;
     }
-    friend int abs(const MInt&amp; arg){
-        return abs(arg.val);
+    friend int abs(const MI&amp; arg){
+        return abs(arg._val);
     }
 private:
-    int val;
+    int _val;
 };
 </code></pre>
 <h2 id="素数筛">素数筛<a class="headerlink" href="#素数筛" title="Permanent link">&para;</a></h2>
