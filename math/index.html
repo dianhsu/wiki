@@ -516,8 +516,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#阶乘逆元求组合数" class="md-nav__link">
-    阶乘逆元（求组合数）
+  <a href="#组合数" class="md-nav__link">
+    组合数
   </a>
   
 </li>
@@ -926,8 +926,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#阶乘逆元求组合数" class="md-nav__link">
-    阶乘逆元（求组合数）
+  <a href="#组合数" class="md-nav__link">
+    组合数
   </a>
   
 </li>
@@ -1087,9 +1087,7 @@
   <h1>首页</h1>
 
 <h2 id="模数int">模数(int)<a class="headerlink" href="#模数int" title="Permanent link">&para;</a></h2>
-<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
-
-template&lt;int P&gt;
+<pre><code class="language-cpp">template&lt;int P&gt;
 class MI{
 public:
     static int selfPow(int base, int p){
@@ -1270,9 +1268,11 @@ vector&lt;int&gt; OddFilter() {
 </code></pre>
 <h2 id="类欧几里得算法">类欧几里得算法<a class="headerlink" href="#类欧几里得算法" title="Permanent link">&para;</a></h2>
 <div class="arithmatex">\[
-    f(N, a, b, c) = \sum_{i = 0}^N \lfloor \frac{a \times i + b}{c} \rfloor \\
+\begin{matrix}
+    f(N, a, b, c) = \sum_{i = 0}^N \lfloor \frac{a \times i + b}{c} \rfloor \\  
     g(N, a, b, c) = \sum_{i = 0}^N \lfloor \frac{a \times i + b}{c} \rfloor ^2 \\
     h(N, a, b, c) = \sum_{i = 0}^N i \times \lfloor \frac{a \times i + b}{c} \rfloor
+\end{matrix}
 \]</div>
 <pre><code class="language-cpp">##include &lt;iostream&gt;
 ##include &lt;algorithm&gt;
@@ -1500,27 +1500,27 @@ T qPow(T b, T n, T p){
     return inv;
 }
 </code></pre>
-<h2 id="阶乘逆元求组合数">阶乘逆元（求组合数）<a class="headerlink" href="#阶乘逆元求组合数" title="Permanent link">&para;</a></h2>
-<pre><code class="language-cpp">template&lt;typename T = long long, int P = 1000000007&gt;
-class Combination{
+<h2 id="组合数">组合数<a class="headerlink" href="#组合数" title="Permanent link">&para;</a></h2>
+<pre><code class="language-cpp">template&lt;typename T = int, int P = 1000000007&gt;
+class Comb{
 public:
-    Combination(int n): div(n + 1, 1), mul(n + 1, 1){
-        for(int i = 1; i &lt;= n; ++i) mul[i] = mul[i - 1] * i % P;
+    Comb(int n): div(n + 1, 1), mul(n + 1, 1){
+        for(int i = 1; i &lt;= n; ++i) mul[i] = 1ll * mul[i - 1] * i % P;
         div[n] = qPow(mul[n], P - 2);
-        for(int i = n - 1; i &gt; 0; --i) div[i] = div[i + 1] * (i + 1) % P;
+        for(int i = n - 1; i &gt; 0; --i) div[i] = 1ll * div[i + 1] * (i + 1) % P;
     }
     T operator () (int n, int m){
         if(m &lt; 0) return 0;
         if(m &gt; n) return 0;
-        return mul[n] * div[m] % P * div[n - m] % P;
+        return 1ll * mul[n] * div[m] % P * div[n - m] % P;
     }
 
 private:
     T qPow(T b, T n){
         T ret = 1;
         while(n){
-            if(n &amp; 1) ret = ret * b % P;
-            b = b * b % P;
+            if(n &amp; 1) ret = 1ll * ret * b % P;
+            b = 1ll * b * b % P;
             n &gt;&gt;= 1;
         }
         return ret;
