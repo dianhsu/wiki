@@ -2,9 +2,7 @@
 comments: true
 ---
 
-## 德州扑克
-德州扑克 （Texas hold'em，有时也简称为Hold'em或Holdem），简称德扑，是世界上最流行的公牌扑克衍生游戏，也是国际扑克比赛的正式竞赛项目之一。世界扑克大赛（World Series of Poker, WSOP）和世界扑克巡回赛（World Poker Tour，WPT）的主赛事（Main Event）项目即是“无限注德州扑克”。德州扑克是位置顺序影响最大的扑克衍生游戏之一，每一轮的下注顺序维持不变，它也是美国多数赌场内最受欢迎的扑克牌类游戏，在美国以外的地区也十分流行，与桥牌的流行程度相当。理论上一桌同时最多可容纳22位（若不销牌则为23位）牌手，但一般是二至十人一桌。
-
+## Texas Holdem
 ```cpp
 namespace holdem {
 enum Suit {

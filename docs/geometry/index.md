@@ -1,7 +1,7 @@
 ---
 comments: true
 ---
-## 计算几何
+## Geometry
 
 ### 极角排序
 

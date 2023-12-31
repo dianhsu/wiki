@@ -1,9 +1,9 @@
 --- 
 comments: true
 ---
-## 图论
+## Graph
 
-### 并查集（DSU）
+### Disjoint Union
 > 能Copy的时候，就不用手搓了
 
 ```cpp
@@ -42,7 +42,7 @@ private:
 
 ```
 
-### 网络流
+### Network Flow
 
 #### 最大流(Dinic)
 ```cpp

@@ -1,8 +1,8 @@
 ---
 comments: true
 ---
-## 数据结构
-### 线段树
+## Data Structure
+### Segment Tree
 
 ```cpp
 // Luogu P3373
@@ -101,7 +101,7 @@ int main(int argc, char* argv[]) {
 }
 ```
 
-### ST表（稀疏表）(C++17)
+### SparseTable
 
 ```cpp
 template<typename iter, typename BinOp>
@@ -127,7 +127,7 @@ public:
 };
 ```
 
-### 树状数组
+### FenWick
 
 ```cpp
 template<typename T>
@@ -155,7 +155,7 @@ struct FenWick {
     }
 };
 ```
-### 珂朵莉树
+### Chtholly
 ```cpp
 namespace Chtholly{
 struct Node{
@@ -193,7 +193,7 @@ protected:
 
 ```
 
-### Splay树
+### Splay Tree
 > https://loj.ac/p/104
 > 有误，暂未修
 
@@ -509,7 +509,7 @@ int main(){
     return 0;
 }
 ```
-### AVL树
+### AVL
 ```cpp
 /**
  * @brief AVL 树

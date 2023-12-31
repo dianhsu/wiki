@@ -1,23 +1,22 @@
 site_name: dianhsu's wiki
 site_url: https://dianhsu.github.io/wiki/
 nav:
-  - 首页: index.md
-  - 数学: 
-    - 首页: math/index.md
-  - 字符串: string/index.md
-  - 游戏: game/index.md
-  - 图论: graph/index.md
-  - 计算几何: geometry/index.md
-  - 数据结构: data_structure/index.md
-  - 杂项: miscellaneous/index.md
-theme: 
+  - Index: index.md
+  - Math: math/index.md
+  - String: string/index.md
+  - Game: game/index.md
+  - Graph: graph/index.md
+  - Geometry: geometry/index.md
+  - Data Structure: data_structure/index.md
+  - Miscellaneous: miscellaneous/index.md
+theme:
   name: material
   custom_dir: overrides
   features:
     - navigation.tabs
     - content.code.copy
     - toc.follow
-  language: 'zh'
+  language: "zh"
 markdown_extensions:
   - toc:
       permalink: true
@@ -30,7 +29,8 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - markdown.extensions.toc:
-      slugify: !!python/object/apply:pymdownx.slugs.slugify {kwds: {case: lower}}
+      slugify:
+        !!python/object/apply:pymdownx.slugs.slugify { kwds: { case: lower } }
       permalink: true
   - attr_list
   - pymdownx.emoji:
@@ -41,7 +41,7 @@ markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
 extra_css:
-  - css/extra.css 
+  - css/extra.css
   - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css
 extra_javascript:
   - https://polyfill.io/v3/polyfill.min.js?features=es6
@@ -50,9 +50,8 @@ extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js
   - javascripts/highlight.js
 
-
 extra:
   search:
-    language: 
-      - 'jp'
-      - 'en'
+    language:
+      - "jp"
+      - "en"
