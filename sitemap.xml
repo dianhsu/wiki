@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://dianhsu.github.io/wiki/index.html</loc>
+         <loc>https://dianhsu.github.io/wiki/</loc>
          <lastmod>2023-12-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://dianhsu.github.io/wiki/data_structure/index.html</loc>
+         <loc>https://dianhsu.github.io/wiki/data_structure/</loc>
          <lastmod>2023-12-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://dianhsu.github.io/wiki/game/index.html</loc>
+         <loc>https://dianhsu.github.io/wiki/game/</loc>
          <lastmod>2023-12-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://dianhsu.github.io/wiki/geometry/index.html</loc>
+         <loc>https://dianhsu.github.io/wiki/geometry/</loc>
          <lastmod>2023-12-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://dianhsu.github.io/wiki/graph/index.html</loc>
+         <loc>https://dianhsu.github.io/wiki/graph/</loc>
          <lastmod>2023-12-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://dianhsu.github.io/wiki/math/index.html</loc>
+         <loc>https://dianhsu.github.io/wiki/math/</loc>
          <lastmod>2023-12-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://dianhsu.github.io/wiki/miscellaneous/index.html</loc>
+         <loc>https://dianhsu.github.io/wiki/miscellaneous/</loc>
          <lastmod>2023-12-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://dianhsu.github.io/wiki/string/index.html</loc>
+         <loc>https://dianhsu.github.io/wiki/string/</loc>
          <lastmod>2023-12-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
